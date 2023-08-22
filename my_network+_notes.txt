@@ -1,0 +1,98 @@
+======== OSI MODEL
+
+-What is the OSI model?
+It is a 7-layer theoretical model for understanding and troubleshooting computers and computer networking.
+
+-What is Layer 1?
+Physical layer, consists of hardware, electrical or light signals; it also encompasses all of the other layers.
+
+-What is Layer 2?
+Data Link Layer, it describes how computers inside of a single LAN or subnet communicate, i.e. using ARP and 
+MAC addresses mainly. Switches live here, unless they are multi-layer/layer 3.
+
+-What is Layer 3?
+Network layer, this allows discrete networks or subnets to communicate with one another. This process is facilitated
+by routers and/or multi-layer switches. This is where IP addresses come into play.
+
+-What is Layer 4?
+Transport layer, this is where TCP/UDP ports live. These ports are used to allow computers to communicate with each other
+on multiple streams simultaneously, e.g. you might request a file from your network file server and ping it at the same time,
+in this scenario you would be using ports 20 and 19 at the same time.
+
+-What is Layer 5?
+Session layer, responsible for initiating, managing, and closing communication sessions between 2+ devices.
+
+-What is Layer 6?
+Presentation layer, responsible for translating data into a format that can be understood by humans.
+
+-What is Layer 7?
+Application layer, closest layer to end users. It is the layer that directly interacts with the actual applications running
+on a machine.
+
+======== DATA ENCAPSULATION
+
+-What is an ethernet header?
+The ethernet header contains information needed in order to route the packet within a LAN, e.g. source MAC, destination MAC,
+File CheckSum, length of packet, etc.
+
+-What is an IP header?
+IP headers contain information needed in order to route a packet between different LANs, e.g. source IP, destination IP,
+version (e.g. IPv4 or IPv6), length, total length, TTL, flags, etc.
+
+-What is a TCP/UDP header?
+TCP headers contain information needed in order to route packets to the correct ports, e.g. source and destination ports,
+sequence number (for when a transmission needs to be broken up into multiple packets), flags (e.g. SYN, ACK, FIN, RST).
+
+In contrast, UDP headers include far less information as it is not a connection-oriented protocol, e.g. source port,
+destination port, length, checksum.
+
+-What are TCP flags?
+TCP flags are used to initiate, manage, control, and terminate connections: SYN is used to initiate a session, SYN/ACK is used to
+agree to the session, ACK is used to acknowledge receipt of packets, FIN is used to signal that the device has finished transmitting and wants to terminate the session, RST is used to reset a session, URG is used to signal that certain data in the packet requires immediate attention, PSH is used to request immediate data delivery to the receiving application.
+
+-What is a payload?
+The actual Layer 7 data that an end user is attempting to transmit, e.g. the actual contents of an email as opposed to all of the surrounding
+information that is needed in order to route the packet, translate the bits, etc.
+
+-What is an MTU?
+Maximum transmission unit, the largest packet (measured in bytes) that can be transmitted over the network; it is 1518 bytes by default,
+but can also be adjusted to allow runt and jumbo packets.
+
+========= CHARACTERISTICS OF NETWORK TOPOLOGIES AND NETWORK TYPES
+
+NETWORK TOPOLOGIES
+
+-What is a mesh network?
+A mesh network is one where every device in the network is directly connected to all other network devices, so that transmissions do not need to pass through a central node to reach the destination; instead, it can be transmitted directly to it.
+
+-What is a star/hub and spoke network?
+Star/HnS networks contain a central node that connects to all of the other endpoints in the network. However, the endpoints do not connect directly to each other, and therefore all data must pass through the central node.
+
+-What is a bus network?s
+A bus network is one in which there is a single cable that runs along the length of the entire network, and where all endpoints connect to this cable and take turns using it to transmit data. Bus networks are half-duplex by nature, ergo they have been largely phased out in favor of full duplex networks, e.g. star or mesh.
+
+-What is a ring network?
+A ring network is one in which endpoints are connected only to the previous and the next endpoint in the topology, forming a ring shape. Data is transmitted in only one direction, and often these networks use a token to control which device is currently allowed to transmit data.
+
+-What is a hybrid network?
+A hybrid network combines characteristics of two or more network topologies, e.g. you might have a star network that also incorporates some connections between endpoints, making it somewhat like a mesh network.
+
+-
+
+NETWORK TYPES
+
+-What is a peer to peer network?
+
+-What is a client-server network?
+
+-What is a LAN?
+
+-What is a MAN?
+
+-What is a WAN?
+
+-What is a WLAN?
+
+-What is a PAN?
+
+
