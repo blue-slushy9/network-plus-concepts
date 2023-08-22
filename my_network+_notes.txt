@@ -82,17 +82,85 @@ A hybrid network combines characteristics of two or more network topologies, e.g
 NETWORK TYPES
 
 -What is a peer to peer network?
+A P2P network is one in which endpoints are directly connected to each other, e.g. in Limewire users share files amongst themselves instead of downloading from a centralized server.
 
 -What is a client-server network?
+A client-server network is pretty much the standard network type, e.g. a client device such as a laptop requesting a webpage from a webserver owned by Microsoft.
 
 -What is a LAN?
+Local Area Network, describes a SOHO type of network, e.g. your home network or a small business.
 
 -What is a MAN?
+Metropolitan Area Network, describes a network that spans across a few buildings in the same city, e.g. a company that runs its business out of a few buildings such as headquarters and branch offices in the same city.
 
 -What is a WAN?
+Wide Area Network, connections that span across long distance, e.g. an ISP router that connects to another ISP router several miles away, and the next one, and the next one, so that together they span across an entire country, which separate LANs that are very far away from each other to communicate. Because of their nature, WANs can use both public and private infrastructure, as well as different types of hardware and cabling.
 
 -What is a WLAN?
+Wireless LAN, it is a LAN that uses wireless signals instead of cabled connections.
 
 -What is a PAN?
+Personal Area Network, it is a network that is localized to an individual or a few individuals, e.g. a person with an iPhone who is using AirPods has a PAN set up that allows them to listen to music.
+
+-What is a CAN?
+Campus Area Networks span across the length of a college campus, e.g. an actual college, Google headquarters, etc.
+
+-What is a SAN?
+Storage Area Network, special high-speed network that separates storage from servers. The storage is centralized and is block level versus file level (NAS). They usually use fiber connections.
+
+-What is a SDWAN?
+Software-Defined WAN, applies SDN principles to WAN, e.g. centralized control which would allow admins/engineers to shape traffic and implement dynamic routing, load balancing, application visibility (allowing admins to prioritize certain apps over others), cloud integration, and more!
+
+-What is MPLS?
+Multi-Protocol Label Switching, protocol used in WANs to allow packet management using labels. It is fairly similar to VLAN tagging.
+
+-What is mGRE?
+Multipoint Generic Routing Encapsulation, came from GRE which is used to encapsulate many network protocols inside one P2P connection. mGRE expands upon this and allows for multiple endpoints to communicate using a single GRE tunnel.
+
+SERVICE-RELATED ENTRY POINT
+
+-What is a demarcation point?
+A demarc is the physical or logical point in an organization's network where the jurisdiction of the org ends and that of the ISP begins, e.g. the network jack in the MDF that connects the organization's network to its ISP router.
+
+-What is a smartjack?
+A smartjack is a hardware device that can be placed at a demarc that offers features for monitoring the demarc, or even providing power.
+
+VIRTUAL NETWORK CONCEPTS
+
+-What is a vSwitch?
+Virtual switch, does most everything a physical switch does, except it is virtual and lives in a virtual network.
+
+-What is a vNIC?
+Virtual NIC, does everything a NIC does except it is virtual and lives on a VM.
+
+-What is Network function virtualization (NFV)?
+Approach to networking that involves virtualizing traditional network hardware on VMs, e.g. firewalls, load balancers, routers, switches.
+
+-What is a hypervisor?
+A hypervisor is software that allows you to create and run virtual machines, e.g. Hyper-V and VMWare.
+
+PROVIDER LINKS
+
+-Satellite?
+Satellite link uses satellites to transmit/receive data, e.g. Starlink.
+
+-Cable?
+Cable connections use existing cable TV infrastructure for internet access.
+
+-DSL?
+DSL uses traditional copper telephone lines, but in such a way that it doesn't interfere with voice transmission. Contrast with dial-up connections.
+
+-Leased line?
+Connections that are rented from a service provider, offers more privacy and reliability than non-leased lines.
+
+-Metro-optical?
+A fiber connection that is confined to a single metropolitan area.
+
+
+
+
+
+
+
 
 
