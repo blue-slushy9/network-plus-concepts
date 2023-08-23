@@ -156,6 +156,161 @@ Connections that are rented from a service provider, offers more privacy and rel
 -Metro-optical?
 A fiber connection that is confined to a single metropolitan area.
 
+###### CABLES AND CONNECTORS
+
+COPPER
+
+-Copper cables are used for ethernet, as well as all of the below cable types.
+
+-Twisted pair?
+Copper cables are twisted in order to prevent crosstalk.
+
+-Cat5, 5e?
+"e" stands for "enhanced"; Cat5 can transmit at speeds of up to 100Mbps, Cat5e can transmit at speeds of up to 1000Mbps which is 1Gbps. Cat5 is more susceptible to crosstalk and signal loss, which 5e sought to fix. Both are backwards compatible.
+
+-Cat6, 6a?
+"a" stands for "augmented"; 6 can support 1 Gbps, 6a can support up to 10 Gbps. 6 are usually UTP, 6a are usually STP. 6 is for up to 55 meters, 6a is for up to 100 meters. 
+
+-Cat7?
+Support speeds of up to 10 Gbps over up to 100 meters, often use STP. Usually overlooked in favor of fiber, GG45 connector?
+
+-Cat8?
+Mostly used in data centers, server rooms, etc. Support up to 25-40 Gbps, use STP and multiple layers of shielding, GG45 connector.
+
+-Coaxial/RG-6?
+These are the same thing; used for TV, internet, comms systems. Not suitable for high-speed data transfer, such as ethernet. 
+
+-Twinaxial?
+Used for transmitting high-freq electrical signals over short distances.
+
+-Termination standards (TIA/EIA 568A & B)?
+Standards for the wiring of ethernet cables, particularly TP. They specify the pin assignments and color coding for individual wires in an ethernet cable. You cannot use both in a single cable run, they must match.
+
+A
+
+White/Green
+Green
+White/Orange
+Blue
+White/Blue
+Orange
+White/Brown
+Brown
+
+B
+
+White/Orange
+Orange
+White/Green
+Blue
+White/Blue
+Green
+White/Brown
+Brown
+
+FIBER
+
+-Single mode?
+Used for long-range connections, this type of fiber cable only supports one mode of light.
+
+-Multi-mode?
+Used for short range connections, this type of fiber cable supports multiple modes of light. 
+
+CONNECTOR TYPES
+
+-Local connector (LC)?
+Fiber connector, has two different fibers: send and receive. 
+
+-Straight tip (ST)?
+Larger than LC and SC, bayonet-style locking mechanism, larger than other fiber connectors, has been phased out.
+
+-Subscriber connector (SC)?
+Push-pull design, square tip, SMF and MMF support.
+
+-Mechanical transfer (MT)?
+Allows for multiple fiber connections within a single connector, up to 48+. Popular in high-speed data centers.
+
+-Registered jack (RJ)?
+Commonly used in both telecomms and computer networking, most popular connectors are 11 and 45. 11 is used for connecting to analog phone systems, and 45 is used for ethernet. 45 has 8 pins and it usually used with TP cables. RJ45 cables are often referred to as "patch cables". These are NOT COMPATIBLE.
+
+-Angled physical contact (APC)?
+Designed to minimize the amount of "back reflection" or "return loss"; ergo commonly used in long range connections, high speed networks, etc.
+
+-Ultra physical contact (UPC)?
+Designed for precise and low-loss connections, used in LANs, FTTH, etc.
+
+-RJ11?
+Primarily used to connect analog telephone devices, e.g. phones, fax, modems to the telephone network.
+
+-RJ45?
+45 is used for ethernet. 45 has 8 pins and it usually used with TP cables. RJ45 cables are often referred to as "patch cables".
+
+-F type?
+Stands for "frequency", a coax connector that is used to connect to TVs, modems, satellite receivers, etc.
+
+-Transceivers/media converters?
+A transceiver is a transmitter and receiver in the same device, it can sometimes be a media converter, e.g. it receives optical signals but transmits electrical signals.
+
+A media converter is used to convert signals from one format to another, e.g. fiber to ethernet.
+
+TRANSCEIVER TYPE
+
+-Small form-factor pluggable (SFP)?
+Hot-swappable, modular transceiver used to allow devices to connect to network devices. SFP devices can be used to allow connectivity to copper or fiber networks. Connector types include LC and RJ45, the modularity of the SFP makes it flexible and adaptable to many different uses and network types.
+
+-Enhanced form-factor pluggable (SFP+)?
+Designed to support higher data rates, they are backwards compatible. Optical transceivers can be SR, LR, ER, and more. They have become the standard in data centers, cloud environments, etc.
+
+-Quad small form-factor pluggable (QSPF)?
+"Quad" refers to the four separate channels that this type of transceiver supports. Comes in many different form factors (data rates). 
+
+-Enhanced quad small form-factor pluggable (QSFP+)?
+Higher data rates and better performance than QSFP, but is backwards compatible. 
+
+CABLE MANAGEMENT
+
+-Patch panel/bay?
+A panel used in data centers, server rooms, etc. to facilitate the connection of COPPER cables to their respective endpoints.
+
+-Fiber distribution panel?
+Fiber equivalent of a patch panel.
+
+-Punchdown block?
+Hardware used to terminate and organize twisted pair cables.
+
+-66?
+Older type, used in phone systems.
+
+-110?
+Newer, used for computer networking and telecomms.
+
+-Krone?
+A brand of punchdown blocks, can be 66 or 110.
+
+-Bix?
+A different type of PDB, made by company 3M.
+
+ETHERNET STANDARDS
+
+COPPER
+
+-10Base-T?
+One of the original Ethernet standards defined in 802.3; "10" means 10 Mbps, "Base" means baseband transmission, and "T" means twisted pair.
+
+-100Base-TX?
+
+
+-1000Base-T?
+
+-10GBase-T?
+
+-40GBase-T?
+
+
+
+
+
+
 
 
 
