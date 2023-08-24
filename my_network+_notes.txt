@@ -292,22 +292,78 @@ A different type of PDB, made by company 3M.
 
 ETHERNET STANDARDS
 
+-Baseband?
+Baseband is a mode of data transmission that does not require modulation, i.e. converting a signal from one type to another. For instance, a modem is a networking device that converts digital signals (which is what computers use) to analog (e.g. telephone) in order to transmit computer data over telephone infrastructure. Baseband also uses the entire bandwidth for a single channel, whereas broadband uses the bandwidth for multiple channels.
+
 COPPER
 
 -10Base-T?
 One of the original Ethernet standards defined in 802.3; "10" means 10 Mbps, "Base" means baseband transmission, and "T" means twisted pair.
 
 -100Base-TX?
-
+Ethernet standard, 100 Mbps, uses CAT5 and higher cables, RJ45 connectors, star topology, full duplex.
 
 -1000Base-T?
+1000 Mbps = 1 Gbps, Gigabit Ethernet, baseband, uses TP cables, CAT5e or higher cables with RJ45, uses all four pairs of wires in cable, 
 
 -10GBase-T?
+10 Gbps, 10G Ethernet, CAT6a and above, TP; cons include high power requirements and signal degradation over long distances. 
 
 -40GBase-T?
+40 Gbps, 40G ethernet, CAT8 and above, TP; max transmission distance is 30 meters. 
 
+FIBER
 
+-100Base-FX?
+Fast ethernet, 100 Mbps, "FX" means fiber optic, SC or ST connectors.
 
+-100Base-SX?
+Fast ethernet, 100 Mbps, "SX" means short wavelength multi-mode fiber, SC or ST connectors, max length is 900 feet.
+
+-1000Base-SX?
+Gigabit ethernet, 1000 Mbps, "SX" means short wavelength multi-mode fiber, SC or LC connectors, max length is 1800 feet.
+
+-1000Base-LX?
+Gigabit ethernet, 1000 Mbps, "LX" means long wavelength for SMF or MMF, up to 6.2 miles with SMF, up to 1800 feet with MMF. 
+
+-10GBase-SR?
+10G ethernet, 10 Gbps, "SR" means short range and MMF, short wavelength optical signals, usually uses LC, max length about 984 feet using OM3 fiber, and 1312 feet using OM4 fiber.
+
+-10GBase-LR?
+10G ethernet, 10 Gbps, "LR" means long range and SMF, long wavelength optical signals, usually uses LC connectors, max length is about 6.2 miles.
+
+-Coarse wavelength division multiplexing (CWDM)?
+Allows for transmitting multiple data channels over a single cable by using different wavelengths of light (colors), used for shorter distances (e.g. MAN) and lower capacity requirements.
+
+-Dense wavelength division multiplexing (DWDM)?
+As its name suggests, the different wavelengths of light are closer together, high capacity, can support 80-100 channels in a single cable, can transmit over hundreds or thousands of miles, protocol agnostic.
+
+-Bidirectional wavelength division multiplexing (WDM)?
+Allows for the simultaneous bidirectional transmission (send/receive) of optical signals on a single fiber using two different wavelengths of light. Traditional WDM only allows for unidirectional transmission or reception over a single fiber.
+
+######## IP ADDRESSING
+
+PUBLIC AND PRIVATE 
+
+-RFC1918?
+"Address allocation for private internets", defines three ranges of IP addresses for use in private networks:
+10.x.x.x
+172.16.x.x - 172.31.x.x
+192.168.x.x
+
+-NAT?
+Network address translation, protocol that converts public IP addresses into private ones, and vice-versa. 
+
+-PAT?
+Port address translation, component of NAT, uses Layer 4 port numbers to keep track of which host in the internal network should receive which packets. This is because the entire internal network uses a single IP address, ergo PAT is used to keep track of which packets go to which host in the network.
+
+IPv4 vs IPv6?
+
+-Automatic Private IP?
+Feature of MS windows, it is an address in the 169.254.x.x/16 range that gets assigned to a DHCP client when it can't reach the DHCP server. APIPA provides local connectivity, but no internet access.
+
+-EUI-64?
+Extended Unique Identifier-64, used in IPv6 networks to create interface IDs for network devices based on their MAC address, especially in SLAAC. 
 
 
 
