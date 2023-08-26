@@ -520,10 +520,49 @@ Connectionless protocol, used when speed is more important than reliability, e.g
 Generic Routing Encapsulation, allows for transmitting multiple data streams and/or protocols over a single channel.
 
 -IPSec?
+Suite of protocols used to secure communication over IP networks, namely the internet. Examples: VPNs, Transport mode (encrypt only the payload), Tunnel mode (encrypt entire packet); Protocols: AH, ESP. Many IPsec implementations use both AH and ESP (see below).
 
 -AH/ESP?
+Authentication Header/Encapsulating Security Payload. AH provides authentication and data integrity for IP packets, no encryption. ESP provides encryption and data confidentiality. 
 
 -Connectionless vs Connection-Oriented Protocols?
+Connectionless protocols use UDP ports, connection-oriented protocols use TCP ports. Connectionless protocols are favored when speed is more important than reliability, e.g. video calls. It doesn't matter if a few packets in the video call session get dropped, the video and audio will still be more than comprehensible.
+
+###### NETWORK SERVICES
+
+DHCP
+
+-Scope?
+DHCP scope defines the range of IP addresses that will be served by the DHCP server, e.g. 192.168.0.0 - 192.168.255.255.
+
+-Exclusion ranges?
+These are IP address ranges within a scope that will NOT be served by the DHCP server.
+
+-Reservation?
+These are specific IP addresses that are set aside for specific hosts, based on its MAC address.
+
+-Dynamic assignment?
+This is when DHCP is used for IP addressing, it's called dynamic because the address leases expire after a certain amount of time and have to be renewed. Ergo dynamic IP addresses are not permanent.
+
+-Static assignment?
+This is when IP addressing is NOT configured with DHCP, rather it is done manually or with a script. In any case, these addresses do not expire on their own, which makes static assignment useful for configuring IP addressing on servers and other key network devices.
+
+-Lease time?
+This is the amount of time that DHCP clients will retain their IP addressing that was assigned by the DHCP server. The default lease time is around 8 days, although it depends on the DHCP server configuration.
+
+-Scope options?
+Other settings that the DHCP server provides to its clients that aren't just IP address, e.g. subnet mask, default gateway, DNS server, domain name, and much more.
+
+-Available leases?
+DHCP IP addresses that are available.
+
+-DHCP relay?
+
+
+-IP helper/UDP forwarding?
+
+
+-
 
 
 
