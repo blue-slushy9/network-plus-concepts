@@ -557,19 +557,66 @@ Other settings that the DHCP server provides to its clients that aren't just IP 
 DHCP IP addresses that are available.
 
 -DHCP relay?
-
+Usually a router, can also be a network service, it intercepts DHCP Discover broadcasts and forwards it to the DHCP server as a unicast transmission. This is necessary because by default routers filter broadcasts and confine them to their respective subnets, so if DHCP relay isn't configured then probably most network devices would not be able to acquire IP addressing information via DHCP.
 
 -IP helper/UDP forwarding?
+Similar to DHCP relay, but can be used for other protocols other than DHCP. However, it only works for UDP protocols.
 
+DNS
 
--
+Record Types
 
+-A vs AAAA?
+A records are the most basic DNS record, they map domain names to IP addresses. AAAA records map domain names to IPv6 addresses.
 
+-CNAME?
+These are alias records, they redirect one domain name to another.
 
+-MX?
+Mail records, these point the mail servers of a given domain.
 
+-SOA?
+Start of Authority, these contain administrative information about the domain, e.g. the admin, their email, etc.
 
+-PTR?
+These map IP addresses to names, you can think of them as reverse A records.
 
+-TXT?
+These provide additional information about the domain, such as the services running on it or details about the configuration of the domain. Often used to provide information about DKIM, SPF, DMARC, etc.
 
+-SRV?
+Service records, these contain information about services running in the domain, e.g. service name, protocol, port, priority, etc.
+
+-NS?
+Name Server record, this point to the DNS servers that serve the domain.
+
+GLOBAL HIERARCHY
+
+-Root DNS servers?
+These are the uppermost DNS servers in the DNS architecture, which relies on delegation for most name resolution on the internet. There are about 13 root DNS servers that serve the entire world, maintained by various technological organizations. In turn, these point to lower-level DNS servers that serve particular subdomains of the internet, e.g. '.com' or '.net'.
+
+-Internal vs External DNS?
+Internal DNS does not require delegation because the network DNS server is the one that holds the records for the domain, i.e. the authoritative DNS server resides on the domain. External DNS, which resolves names to IP addresses on the global internet, does rely on delegation to root DNS servers because the authoritative DNS server resides outside of the source's domain. Therefore communication with several other DNS servers is usually necessary to resolve a name.
+
+-Zone transfer?
+A DNS zone is similar to a DHCP scope, it describes the configuration of the domain as a whole. Ergo, a zone transfer entails passing along the entire DNS configuration of a domain, usually from the authoritative DNS server to a secondary DNS server. 
+-Authoritative Name Server?
+The name server that is considered to hold the official DNS records for a zone/domain. DNS records and/or configuration can only be changed from the authoritative server.
+
+-TTL?
+Every DNS record has a time to live, which tells the DNS server or host how long that information will remain valid. After it has expired, the server or host can then submit another query.
+
+-DNS cache?
+One of the foundational principles of DNS is that every host is ultimately responsible for its own name resolution, even if it often needs to delegate this process to one or more DNS servers. As such, every host also has its own DNS cache, which is used to expedite the process of name resolution in the case that the particular domain name is one with which communication occurs often. Unfortunately, the cache can also cause connection issues if the DNS information in the cache is outdate, which is why the cache has a TTL or can be flushed manually.
+
+-Reverse DNS/reverse lookup?
+Just what it sounds like, instead of resolving a name to an IP address, reverse lookup resolves an IP address to a name.
+
+-Forward DNS/forward lookup?
+Standard DNS lookup, resolving a name to an IP address.
+
+-Recursive/iterative lookup?
+Recursion is the process of delegating a DNS query to a DNS server, be that the local DNS server or the root servers that serve the entire world. 
 
 
 
