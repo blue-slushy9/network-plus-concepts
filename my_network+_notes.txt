@@ -719,31 +719,166 @@ Rented out from a provider to a group of organizations, usually sharing some com
 SERVICE MODELS
 
 -Software as a Service (SaaS)?
+This model entails offering only the software to clients, which means the infrastructure and platform are owned and managed by the service provider, e.g. ChatGPT is a web app that is accessed through a browser.
 
 -Infrastructure as a Service (IaaS)?
+Infrastructure refers to the physical equipment that runs networks, e.g. routers, switches, servers, storage. The client rents out the infrastructure and then configures and maintains it. Example: Azure with Virtual Machines.
 
 -Platform as a Service (PaaS)?
+This model entails providing a ready-to-go platform for software development. The developers will have everything they need to start building their apps, which saves them the time and effort involved in configuring their own development environments. Example: Heroku.
 
 -Desktop as a Service (DaaS)?
+This model entails hosting virtual desktops on service-provider infrastructure and then allowing end users from a client organization to connect to them and use them. This saves organizations money and time which they would otherwise have to spend on acquiring, configuring, and maintaining the equipment.
 
 INFRASTRUCTURE AS CODE
 
 -Automation/orchestration?
+Process of deploying, managing, and scaling infrastructure and services using code and scripts.
 
 CONNECTIVITY OPTIONS
 
 -Virtual private network (VPN)?
+An app that creates a secure tunnel between the endpoint on which it is run and the destination. The traffic is routed through a VPN server. In an enterprise setting, it is often used to provide remote access to the organization's network.
 
 -Private-direct connection to cloud provider?
+A dedicated network link that connects a client's on-premises architecture directly to a cloud provider's data center.
 
 -Multitenancy?
+Model that allows a single instance of a software application to serve multiple customers or tenants. Clients/tenants share the same infrastructure, e.g. servers, network devices, storage; however they are logically isolated from one another.
 
 -Elasticity?
+Usually used in cloud computing, refers to the property of a given technology to be scaled up or down to meet shifting business demand. Examples: on-premises infrastructure is not very elastic, whereas cloud infrastructure is highly elastic.
 
 -Scalability?
+Refers to the ability of a particular technology or approach in IT to be implemented multiple times in order to expand operations. Example: cloud is generally highly scalabale, because all you have to do is go on the cloud management console and pay the extra money required to expand your cloud infrastructure or access.
 
 -Security implications?
+This is a hotly debated topic, however the consensus seems to be that as long as the cloud provider is of good repute (e.g. Microsoft, Amazon), security should be comparable to hosting your data on-premises. It could also depend on what level of service you are subscribed to, e.g. SaaS entails the provider managing most of the underlying security, whereas IaaS could require a higher level of involvement on the part of client re. security.
 
+COMPARE AND CONTRAST NETWORKING DEVICES
+
+NETWORKING DEVICES
+
+-Layer 2 switch?
+Traditional switch, routes packets within a LAN/subnet. Each switchport creates a separate collision domain. This switch keeps an ARP table that maps IP addresses to MAC addresses; it can forward, flood, or filter packets. If it receives a broadcast, it will flood it; only routers and L3 switches drop broadcast packets.
+
+-Layer 3 capable switch?
+Newer type of switch, is able to route IP traffic like a router does, including between VLANs. Still has all the functionality of a layer 2 switch, but with more features. These switches are usually configured to drop broadcast packets, just like layer 2 switches.
+
+-Router?
+Routers route traffic between different LANs/subnets/VLANs. They create separate collision and broadcast domains at every interface. They can be configured to use VLANs and subinterfaces, they can also be configured with various routing protocols, e.g. RIP, OSPF. They keep routing tables for routing to different networks, and ARP tables to route within their own networks.
+
+-Hub?
+Hubs are simple layer 1 devices that can be thought of simply as bit repeaters. Every packet they receive into one interface they then transmit out of all of their other interfaces.
+
+-Access point?
+Wireless Access Point, it is a device (often a router) with a cabled connection to a network that allows endpoints to connect to it wirelessly for their own internet/intranet access. In 2023, WAPs should be using WPA2 or WPA3 for security. They broadcast their SSIDs so that end users will be able to identify them. 
+
+-Bridge?
+A network bridge is an extender or connector between different network segments. Can be a device or software, can also be wired or wireless. Whereas routers separate network segments, bridges connect separate network segments as if they were a single segment. Bridges filter or forward traffic based on MAC addresses. 
+
+-WLAN controller?
+Centralized networking device that controls multiple WAPs in a WLAN. WAPs can be configured with addressing information, security policies, authentication encryption, SSIDs, firmware, etc. all by using the controller.
+
+-Load balancer?
+Device or software that is responsible for distributing traffic loads across networking devices as evenly and efficiently as possible. Essential component of cloud and data center architectures.
+
+-Proxy server?
+This is a server through which traffic from and for another endpoint is channeled. Proxy servers are for various purposes, including security ( e.g. IP masking, encrypted tunneling, content filtering. Other purposes include improved performance (load balancing), anonymity, and access control. Example: the proxy might make a web request to an external webserver on behalf of a client, but it might make changes to the request packet before it does, e.g. caching content, filtering content, adding security headers. Primary types are forward proxy and reverse proxy.
+
+-Cable modem?
+AKA DOCSIS modem. Modems are used to modulate (convert) signals from digital to analog (telephone), and vice-versa, in order to allow end users to access the internet using, in this case, cable TV infrastructure.
+
+-DSL modem?
+Digital subscriber line, this type of modem is used for transmitting digital signals over telephone lines, which is why it is so much faster than dial-up, which transmits analog signals. Unlike dial-up, DSL allows for both voice and data to be transmitted/received simultaneously, using filters/splitters to separate the signals. Dial-up only allows users to transmit voice or data, but not both. DSL also uses technologies such as advanced modulation and FDM to achieve its higher speeds. 
+
+-Repeater?
+Layer 1 devices, these are used to extend the reach of a network by amplifying or regenerating signals. Can be wired or wireless, can introduce some latency as amplification/regeneration can take some time.
+
+-Voice gateway?
+Networking device that serves as an interface between traditional analog or digital telephone networks (e.g. PSTN) and IP-based networks (e.g. VoIP). They convert and transmit the signals so that these different types of networks can communicate with each other.
+
+-Media converter?
+Device used to convert signals from one format to another, typically fiber (light) to copper (electrical). 
+
+-Intrusion prevention system (IPS)?
+This is software that monitors the network or host for threats, however unlike an IDS it will also take action if it detects a(n) (potential) attack.
+
+-Intrusion detection system (IDS)?
+Software that monitors the network or host for threats, unlike an IPS it will not take action to manage the risk but can be configured to send alerts if a potential attack is detected. IPS examples: can alter, redirect, or drop network traffic to prevent attacks. Since an IPS makes so many decisions and takes so many actions automatically, there is a lot of room for error and hence it makes sense why an IDS would be preferred in some situations.
+
+-Firewall?
+Device or software that blocks certain traffic based on its configured ACLs. An ACL is an access control list, it is used to allow or block certain types of traffic based on certain characteristics, e.g. source IP or destination port. 
+
+-VPN headend?
+AKA "VPN gateway", device or server that serves as the entry point or endpoint for a VPN. It receives incoming VPN connections and manages the authentication and encryption. It establishes the encrypted tunnels that connect with remote clients and/or branch offices. The headend/gateway can perform NAT, usually supports multiple protocols, and can be configured with security policies.
+
+NETWORKED DEVICES
+
+-Voice Over Internet Protocol (VoIP)?
+
+-Printer?
+
+-Physical access control devices?
+
+-Cameras?
+
+-HVAC sensors?
+
+IoT
+
+-Refrigerator?
+
+-Smart speakers?
+
+-Smart thermostats?
+
+-Smart doorbells?
+
+-ICS/SCADA?
+Industrial Control Systems/Supervisory Control And Data Acquisition,
+
+COMPARE AND CONTRAST ROUTING TECHNOLOGIES AND BANDWIDTH MANAGEMENT CONCEPTS
+
+ROUTING
+
+-Dynamic routing?
+
+PROTOCOLS
+
+-RIP?
+
+-OSPF?
+
+-EIGRP?
+
+-BGP?
+
+-Link state?
+
+-Distance vector?
+
+-Hybrid?
+
+-Static routing?
+
+-Default route?
+
+-Administrative distance?
+
+-Exterior vs Interior?
+
+-Time to Live?
+
+BANDWIDTH MANAGEMENT
+
+-Traffic shaping?
+
+-Quality of Service (QoS)?
+
+CONFIGURE AND DEPLOY COMMON ETHERNET SWITCHING
+
+-
 
 
 
