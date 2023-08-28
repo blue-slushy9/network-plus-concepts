@@ -616,7 +616,141 @@ Just what it sounds like, instead of resolving a name to an IP address, reverse 
 Standard DNS lookup, resolving a name to an IP address.
 
 -Recursive/iterative lookup?
-Recursion is the process of delegating a DNS query to a DNS server, be that the local DNS server or the root servers that serve the entire world. 
+Recursion is the process of delegating a DNS query to a DNS server, be that the local DNS server or the root servers that serve the entire world. The DNS client does not actually get involved in the process.
+
+Iterative lookup is when the DNS server simply points the client in the direction of the DNS server(s) that will help them resolve the name they are attempting to reach.
+
+NTP
+
+-Stratum?
+Strata are hierarchies in NTP that are assigned to timekeeping devices to denote their level of accuracy and proximity to a time source, e.g. stratum 0 devices are the most accurate, a stratum 3 device or program would be considered significantly less accurate.
+
+-Clients?
+NTP clients are devices that sync their internal clocks up with an external timekeeping device or program.
+
+-Servers?
+NTP servers have synchronized their own clocks with highly accurate sources, such as atomic clocks or GPS satellites.
+
+BASIC CORPORATE AND DATA CENTER NETWORK ARCHITECTURE
+
+THREE-TIERED
+
+-Core?
+One of three primary layers, aka backbone, central park of network infrastructure. Primary function is to provide high-speed connectivity to entire network. Probably includes high-speed switches, routers, and fiber connections. Common protocols include BGP and MPLS.  
+
+-Distribution/aggregation layer?
+Connects core layer to the access layer, it is an intermediary. Connects multiple access layer segments to core layer, aggregating traffic from multiple access-layer devices and routing toward destination. Routing and filtering, VLAN support, aggregation of WAN connections. Protocols include OSPF, EIGRP, etc.
+
+-Access/edge?
+Connects end-user devices to the network, called edge because endpoints are usually located there. VLANs, security and access control; connects to distribution layer. Uplinks or trunklinks are used to aggregate access-layer switch and then carry it to distribution layer. Low latency is a must.
+
+SOFTWARE-DEFINED NETWORKING
+
+-Application layer?
+Closest to administrators, application layer is where the programs that allow humans to give instructions to the control layer run. SDN apps interact with SDN controller through APIs. 
+
+-Control layer?
+Seat of the SDN controller, this layer tells the infrastructure how to route and manage traffic. The SDN controller translates high-level instructions from App Layer to low-level instructions to be executed at this level. Communicates with infrastructure devices through southbound APIs to manage the network.
+
+-Infrastructure layer?
+This is where the physical equipment lives, e.g. routers, switches, cables.
+
+-Management plane?
+One of three planes, including control and data planes. This plane is responsible for overall management, configuration, monitoring, maintenance, etc. of the SDN architecture. Often involves human administrators who interact with the SDN controller. Security rules, such as ACLs and firewalls, are configured on this plane; also software/firmware updates and patches.
+
+SPINE AND LEAF
+
+-Software-defined networking?
+SDN is an improvement on traditional network infrastructure because it centralizes management of networking devices into an SDN controller. SDN applications are used by administrators to pass instructions to the controller, which then enforces the configuration on all networking devices. 
+
+-Top-of-rack switching?
+ToR, network design that involves placing physical switches at the top of each cabinet or rack of servers in the data center. Advantages include: proximity to servers, ease of switch management, cost efficiency, easier cable management, etc. May not be suitable for all datacenter environments. 
+
+-Backbone?
+Core of the network, connects the various disparate segments and allows them to communicate. Must have high capacity, many connections, high-power networking equipment. Also security, e.g. firewalls, ACLs.
+
+TRAFFIC FLOWS
+
+-North-South?
+Describes data flowing between different networks, e.g. a datacenter granting access to their network to an authenticated user.
+
+East-West?
+Describes data that flows between devices on the same network, e.g. a datacenter has to communicate with another datacenter owned by the same company.
+
+Branch office vs On-premises?
+A branch office is an extension of the headquarters of an organization. It will not contain the exact same equipment as the headquarters, but it will provide access to the network and have some data needed to run the branch office operations.
+
+On-premises, or headquarters, will store a lot more data, have a better network infrastructure as it needs to communicate with all branch offices, and have many more people physically working there, probably with better security.
+
+-Datacenter vs Colocation?
+Datacenters can be owned outright or the space can be rented out, but the organization is responsible for the equipments, maintenance, power, HVAC, etc.
+
+Colocations are owned by a third-party provider and are rented out, including the space, power, HVAC, and network connectivity. Different organizations rent under the same roof, and each organization then becomes responsible for any additional equipment they need to install.
+
+STORAGE AREA NETWORKS (SAN)
+
+CONNECTION TYPES
+
+-Fiber channel over ethernet (FCoE)?
+These are Fiber Channel frames encapsulated inside of Ethernet frames. Relies on CNAs, Converged Networks Adapaters, which support both Ethernet and FC protocols. They can also encapsulate in the other direction. Conventional ethernet switches can support FCoE if they in turn support DCB.
+
+-Fibre channel?
+Primarily used in SANs and data centers, designed for fast and reliable connections. Uses FC switches, supports zoning, supports virtualization. Does not use IP!
+
+-Internet Small Computer Systems Interface (iSCSI)?
+Network protocol that facilitates block-level data transfer across a network. Allows a host to connect to a remote storage device, e.g. disk arrays, storage servers, or a NAS system. There are initiator and target systems, supports authentication and security, commonly used in virtualization environments. More cost-effective and easier to implement than FC, however it probably cannot match FC performance.
+
+SUMMARIZE CLOUD CONCEPTS AND CONNECTIVITY OPTIONS
+
+DEPLOYMENT MODELS
+
+-Public?
+Examples: Azure, AWS. The equipment is owned by the provider and can be rented out by anyone who wants to pay and meets requirements. 
+
+-Private?
+All network infrastructure is owned and managed by a single organzation, e.g. routers, switches, servers, storage. Can be managed by the organization's IT department or to a cloud service provider.
+
+-Hybrid?
+Combines elements of public and private cloud architectures.
+
+-Community?
+Rented out from a provider to a group of organizations, usually sharing some common goal or mission. 
+
+SERVICE MODELS
+
+-Software as a Service (SaaS)?
+
+-Infrastructure as a Service (IaaS)?
+
+-Platform as a Service (PaaS)?
+
+-Desktop as a Service (DaaS)?
+
+INFRASTRUCTURE AS CODE
+
+-Automation/orchestration?
+
+CONNECTIVITY OPTIONS
+
+-Virtual private network (VPN)?
+
+-Private-direct connection to cloud provider?
+
+-Multitenancy?
+
+-Elasticity?
+
+-Scalability?
+
+-Security implications?
+
+
+
+
+
+
+
+
 
 
 
