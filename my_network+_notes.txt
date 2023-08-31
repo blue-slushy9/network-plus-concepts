@@ -816,43 +816,58 @@ AKA "VPN gateway", device or server that serves as the entry point or endpoint f
 NETWORKED DEVICES
 
 -Voice Over Internet Protocol (VoIP)?
+Technology that allows for voice transmission, similar to traditional telephone, over IP networks. Converts audio signals into digital data.
 
 -Printer?
+A network printer is configured with the IP addressing information that other network endpoints have, e.g. host address, subnet mask, default gateway. This way it can receive print jobs from over the network, versus needing to connect to it with a USB cable. In larger networks, there may even be a print server. Advantages include centralized management and ease of access.
 
 -Physical access control devices?
+Devices that control physical access to a building or other restricted area, e.g. a vestibule. 
 
 -Cameras?
+Network or IP camera, transmits audio and video over the network. Can be wired or wireless, if wired can support PoE.
 
 -HVAC sensors?
+Sensors in IT environments (data centers, server rooms, etc.) that are used to monitor the HVAC conditions. Environmental factors that are monitored: temperature, ventilation, airflow, pressure, leaks, light.
 
 IoT
 
 -Refrigerator?
+Fridge with IP addressing, connected to a network. Features can include inventory tracking, temperature control, energy management, automated ordering, security, data analytics, etc.
 
 -Smart speakers?
+Support AI and cloud connectivity, since they rely on voice recognition for their commands. Usually also offer AI assistants, e.g. Alexa. 
 
 -Smart thermostats?
+Includes remote control, learning algorithms, and integration with other smart home devices. Can also support virtual assistants.
 
 -Smart doorbells?
+Includes internet connectivity and video streaming, two-way audio, motion detection, cloud storage, integration with other smart devices.
 
 -ICS/SCADA?
-Industrial Control Systems/Supervisory Control And Data Acquisition,
+Industrial Control Systems/Supervisory Control And Data Acquisition, these are control and automation systems for industrial environments, i.e. "IT without carpet". The two main cateogies of ICS are process control systems (general, large scale) and discrete control systems (specific, small scale). Technically, SCADA is a subset of ICS that focuses on data aggregation, monitoring, and analysis. SCADA features include remote monitoring, data acquisition, control, security.
 
 COMPARE AND CONTRAST ROUTING TECHNOLOGIES AND BANDWIDTH MANAGEMENT CONCEPTS
 
 ROUTING
 
 -Dynamic routing?
+Relies on routing protocols, e.g. RIP, OSPF. Routing tables are configured automatically via inter-router communication. Best routes are calculated automatically based on factors such as distance, link state, connection speed, etc.
 
 PROTOCOLS
 
 -RIP?
+Router Information Protocol, one of the earliest dynamic routing protocols. It is a distance-vector protocol, which means it makes routing decisions based on how many hops are needed to reach the destination. While it does offer low overhead, it is considered primitive because hop count is not actually a very good metric for determining the best route to a destination. Other factors need to be taken into consideration, such as the link state.
 
 -OSPF?
+Open Shortest Path First, designed to work within a single AS, it is perhaps the gold standard of dynamic routing protocols. OSPF is a link-state protocol, which means it takes into account the bandwidth of any connection that it may choose to add to its routes. The metric OSPF uses is "cost": the lower the cost of a route, the higher the preference OSPF will give to it, because lower-cost routes have connections with higher bandwidth.
 
 -EIGRP?
+Enhanced Interior Gateway Routing Protocol, a Cisco proprietary technology for dynamic routing which uses and advanced distance-vector protocol. This means that it utilizes features of both distance-vector and link-state protocols, taking into account bandwidth, delay, reliability, load. 
+
 
 -BGP?
+Border Gateway Protocol, used for routing between separate ASes (Autonomous Systems), i.e. between different networks run by different organizations. It is the most widely used exterior gateway protocol, meaning that it is used for dynamic routing over the internet as a whole rather than smaller subnets in the same wider network.
 
 -Link state?
 
