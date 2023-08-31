@@ -870,30 +870,160 @@ Enhanced Interior Gateway Routing Protocol, a Cisco proprietary technology for d
 Border Gateway Protocol, used for routing between separate ASes (Autonomous Systems), i.e. between different networks run by different organizations. It is the most widely used exterior gateway protocol, meaning that it is used for dynamic routing over the internet as a whole rather than smaller subnets in the same wider network.
 
 -Link state?
+A type of dynamic routing protocol that determines the best route based on connection bandwidths. Routers and multilayer switches running this protocol keep a link-state database and use LSAs (link-state advertisements) to share information and determine best routes. Examples: OSPF, IS-IS.
 
 -Distance vector?
+A type of dynamic routing protocol that determines the best route based on hop count. DV routers/switches send routing updates to each other periodically. Examples: RIP.
 
 -Hybrid?
+Combines elements of both DV and LS routing protocols. Example: EIGRP.
 
 -Static routing?
+Routes that are configured manually by the admin/engineer. Advantages include less overhead, predictability, reliability. Would only recommend for smaller, simpler networks.
 
 -Default route?
+Typically specified as an IP address, which belongs to the default gateway or the router that connects the LAN to the internet. In IPv4, it is typically represented as 0.0.0.0/0, it is used when the router has no other route the destination.
 
 -Administrative distance?
+Numerical value that represents the level of preference or trustworthiness assigned to a particular route. Lower value means more trustworthiness. Directly connected routes have the lowest AD value, 0 or 1. Static routes usually have an AD value of 1, dynamic routes vary. AD values can also be configured manually.
 
 -Exterior vs Interior?
+Exterior routing protocols handle routing between different ASes, the most widely used example is BGP. Interior routing protocols handle routing within a single AS, these protocols are more numerous: RIP, OSPF, IS-IS, etc.
 
 -Time to Live?
+The maximum number of hops a routing update can travel before it is considered to be invalid and gets dropped.
 
 BANDWIDTH MANAGEMENT
 
 -Traffic shaping?
+The practice of configuring a network and its devices to route the traffic in a specific manner, e.g. to prioritize data from certain applications over others, load balancing, using specific routes and/or devices for certain traffic. 
 
 -Quality of Service (QoS)?
+Principle that prioritizes certain types of network traffic over others, e.g. audio and video at an organization that relies on virtual meetings to conduct business.
 
 CONFIGURE AND DEPLOY COMMON ETHERNET SWITCHING
 
--
+-Data VLAN?
+A VLAN configured for data exchange, can be useful for security and segmentation.
+
+-Voice VLAN?
+Designed for VoIP traffic, used to prioritize and optimize the voice data transmission.
+
+PORT CONFIGURATIONS
+
+-Port tagging (802.1q)?
+Port/VLAN tagging is used to label and route packets based on their specific source and/or destination VLAN. 
+
+PORT AGGREGATION
+
+-LACP?
+Link aggregation control protocol, used to configure and manage link/port aggregation, i.e. combining separate physical ports on a router/switch as a single logical interface.
+
+-Duplex?
+Half duplex means a given connection can transmit or receive, but not at the same time. Full duplex means a given connection can transmit and receive at the same time. Half duplex connections are quite rare nowadays.
+
+-Speed?
+Transmission speed is generally measured in bps (bits per second), e.g. Gigabit Ethernet is called that because it is capable of transmitting up to 1 Gbps under the right conditions.
+
+-Flow control?
+Entails managing the transmission of data so that all destinations are able to receive and process it successfully, based on their respective capabilities in doing so. For example, a brand new high-performance webserver might be serving a web request for a fairly high-performance web app, and the client may be a fairly old computer with comparatively low processing power. Flow control will most likely be needed to ensure the client can sucessfully process the packets.
+
+-Port mirroring?
+Involves creating a copy of all traffic passing through a particular port, recreating it, and then sending it to a different port (on the same device or another) in order to analyze its contents. This process does not disrupt or otherwise affect the original port or traffic, it only allows admins to view the traffic in its entirety. 
+
+-Port security?
+Refers to the security of physical ports on networking equipment, particularly switches.
+
+-Jumbo frames?
+Ethernet frames that are larger than 1500 bytes. Usually not supported, but networks can be configured to allow jumbo packets; they are common in SAN networks because of the sheer volume of data being processed.
+
+-Auto MDI-X (Medium-Dependent Interface Crossover)?
+
+-MAC tables?
+
+-PoE/PoE+?
+
+-STP?
+
+-CSMA/CD?
+
+-ARP?
+
+-NDP (Neighbor Discovery Protocol)?
+
+802.11 STANDARDS
+
+-a?
+
+-b?
+
+-g?
+
+-n?
+
+-ac?
+
+-ax?
+
+FREQUENCIES AND RANGE
+
+-2.4 GHz?
+
+-5 GHz?
+
+CHANNELS
+
+-Regulatory impacts?
+
+-Channel bonding?
+
+SSID
+
+-Basic service set?
+
+-Extended service set?
+
+-Independent basic service set (ad-hoc)?
+
+-Roaming?
+
+ANTENNA TYPES
+
+-Omni?
+
+-Directional?
+
+ENCRYPTION STANDARDS
+
+-WPA?
+
+-WPA2 Personal?
+
+-AES?
+
+-TKIP?
+
+-WPA/WPA2 Enterprise (AES/TKIP)?
+
+CELLULAR TECHNOLOGIES
+
+-CDMA?
+
+-GSM?
+
+-LTE?
+
+-3G?
+
+-4G?
+
+-5G?
+
+-MIMO?
+
+-MU-MIMO?
+
+
 
 
 
