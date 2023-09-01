@@ -932,22 +932,28 @@ Entails managing the transmission of data so that all destinations are able to r
 Involves creating a copy of all traffic passing through a particular port, recreating it, and then sending it to a different port (on the same device or another) in order to analyze its contents. This process does not disrupt or otherwise affect the original port or traffic, it only allows admins to view the traffic in its entirety. 
 
 -Port security?
-Refers to the security of physical ports on networking equipment, particularly switches.
+Refers to the security of physical ports on networking equipment, particularly switches. Port MAC address filtering is one commonly used method of ensuring that only authorized devices are able to access the network. If, for example, an unauthorized device does connect to a port, it could be configured to shut down so that the device/user isn't able to access the network, or alternatively to send alerts to admins and/or log the event. The most notable vulnerability in port security is that it relies on MAC addresses, ergo an attacker could potentially use an attack method from higher in the OSI stack.
 
 -Jumbo frames?
 Ethernet frames that are larger than 1500 bytes. Usually not supported, but networks can be configured to allow jumbo packets; they are common in SAN networks because of the sheer volume of data being processed.
 
 -Auto MDI-X (Medium-Dependent Interface Crossover)?
+802.3ab, automatically detects and configures correct signaling for network cable connections, specifically in ethernet. Before AMDI-X, a specific type of cable was needed (straight-through, crossover) based on what kinds of devices you were trying to connect.
 
 -MAC tables?
+Used by switches to associate connected devices with their corresponding switchports. This is because, within a LAN, packets are delivered based on MAC address. 
 
 -PoE/PoE+?
+Power over Ethernet, allows devices to receive electrical power over ethernet cables. The cable can be used simultaneously for powering/charging the device and data transmission. PoE+ delivers higher power transmission than PoE, which allows it to support more types of devices.
 
 -STP?
+802.1d, Spanning Tree Protocol, a technology that prevents routing loops in a network. It selects a single path and then disables all others. STP selects a "root bridge", which is the switch that becomes the reference point for calculating the best paths. Switches exchange BPDUs in order to calculate the best paths. Like OSPF, STP also uses "cost". 
 
 -CSMA/CD?
+Carrier Sense Multiple Access with Collision Detection, a feature of early ethernet networks that could only support half-duplex communication. It helps to avoid packet collisions, as well as detect them when they occur. It "listens" to the network for transmissions and collisions, if a collision does occur then it waits until the media are clear and then restarts the transmission.
 
 -ARP?
+
 
 -NDP (Neighbor Discovery Protocol)?
 
