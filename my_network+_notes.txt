@@ -953,85 +953,119 @@ Power over Ethernet, allows devices to receive electrical power over ethernet ca
 Carrier Sense Multiple Access with Collision Detection, a feature of early ethernet networks that could only support half-duplex communication. It helps to avoid packet collisions, as well as detect them when they occur. It "listens" to the network for transmissions and collisions, if a collision does occur then it waits until the media are clear and then restarts the transmission.
 
 -ARP?
-
+This layer 2 protocol is used in ethernet to map MAC addresses to IP addresses. ARP broadcasts (technically "ARP requests") are sent out on the LAN with a particular MAC address, asking for the IP address that goes with it. All of the devices in the LAN actually keep their own ARP tables with these mappings, however the entries are cleared regularly in order to make it more dynamic. 
 
 -NDP (Neighbor Discovery Protocol)?
+This is an IPv6 technology used by network devices to discover other hosts in the LAN. It basically replaces ARP and ICMP in IPv4. A neighbor relationship table gets created, RA (Router Advertisement) messages are used for discovery. Uses various ICMPv6 message types, including RAs.
 
 802.11 STANDARDS
 
 -a?
+The successor to 802.11b, transmits at 5 GHz and supports data transfer speeds of up to 54 Mbps. 
 
 -b?
+The original wireless networking standard, transmits at 2.4 GHz and supports data transfer speeds of up to 11 Mbps.
 
 -g?
+The successor to 802.11a, transmits at 2.4 GHz and supports data transfer speeds of up to 54 Mbps.
 
 -n?
+Wi-Fi 4, successor to 802.11g. Transmits in 2.4 and 5 GHz frequency bands. Can transmit at rates up to 600 Mbps. Backwards compatible with earlier standards; this standard also introduced MIMO, multiple-input multiple-output, i.e. many different data streams can be transmitted simultaneously to a single device. Supports channel bonding of adjacent channels, e.g. 20 MHz or 40 MHz wide channels. 
 
 -ac?
+ Wi-Fi 5, transmits mostly in the 5 GHz frequency band. Data rates are up to 1.3 to 3.5 Gbps, depending on the configuration. This standard introduced MU-MIMO, Multiple User MIMO, which means that multiple devices can receive multiple streams of data all at the same time. Uses channel bandwidths of up to 160 MHz, backwards-compatible with all of the above standards, supports beamforming. 
 
 -ax?
+Wi-Fi 6, transmits at the 2.4 or 5 GHz frequency range. Data rates up to 9.6 Gbps, backwards-compatible with all of the above standards. Supports WPA3, uses OFDMA to divide channels into smaller subchannels. 
 
 FREQUENCIES AND RANGE
 
 -2.4 GHz?
+Longer wavelength means the signal reaches further and is less susceptible to signal loss, however since so many other wireless devices transmit in this frequency range, that could introduce a lot of interference.
 
 -5 GHz?
+Shorter wavelength means higher data transmission rates and shorter range. The advantage is that fewer wireless devices transmit in the 5 GHz frequency range, which means less signal interference.
 
 CHANNELS
 
 -Regulatory impacts?
+Governments create and then enforce many regulations re. networking for security, privacy, and public access reasons. Example: governments decide which frequency bands will be used (e.g. 2.4 or 5 GHz) in order to minimize interference. Also standards for networking, e.g. 4G, 5G.  
 
 -Channel bonding?
+Refers to the practice of combining separate transmission channels on an access point, e.g. channels 1 and 2. This is done in order to increase throughput, improve performance, and improve reliability. A wider channel means higher bandwidth. Channel bonding requires support from both the source and destination devices. 
 
 SSID
 
 -Basic service set?
+Refers to the assortment of devices for which a single access point is routing network traffic, including the AP.
 
 -Extended service set?
+Expands upon the BSS to include other access points in the same network, but they must have the same SSID and password, e.g. a CAN with multiple access points throughout the campus all labeled "University Wi-Fi". Roaming is a huge advantage of an ESS, as an end user can have uninterrupted internet access all across the campus (in this example). 
 
 -Independent basic service set (ad-hoc)?
+Wireless devices communicate directly with one another without the need for a central AP or router. Disadvantages: poor security, limited range. 
 
 -Roaming?
+Refers to physical movement, when a connection is said to be "roaming" it means the end user can remain connected to the network even if their physical location changes (within a reasonable boundary).
 
 ANTENNA TYPES
 
 -Omni?
+Omnidirectional means it transmits in all directions, in a donut-shaped pattern.
 
 -Directional?
+Transmits the signal in a particular direction, the pattern somewhat resembles a weather balloon.
 
 ENCRYPTION STANDARDS
 
 -WPA?
+Wireless Protected Access, now deprecated but it was an improvement upon the old WEP standard. Originally it was a temporary solution to WEP insecurity while WPA2 was being developed. It uses TKIP for encryption and EAP for authentication. 
 
 -WPA2 Personal?
+Uses AES for encryption, which to this day is very secure. Users enter a PSK (pre-shared key) to access the network, recommended for SOHO.
 
 -AES?
+Advanced Encryption Standard, highly secure, uses a symmetric encryption algorithm. AES has many applications, including data in motion, data at rest, VPNs, and web browser (TLS).
 
 -TKIP?
+Temporal Key Integrity Protocol, used for encryption and data integrity in WPA but now deprecated. 
 
 -WPA/WPA2 Enterprise (AES/TKIP)?
+Stronger authentication protocols than the Personal variant, often uses a RADIUS server. Each user normally has a unique set of credentials. 
 
 CELLULAR TECHNOLOGIES
 
 -CDMA?
+Code Division Multiple Access, mostly deprecated. Used in 2G and 3G cellular networks. Enables multiple endpoints to share the same frequency spectrum for simultaneously transmitting and receiving data. The data signal is spread over a frequency band and assigned a unique spreading code in order to differentiate the data streams. 
 
 -GSM?
+CDMA competitor, Global System for Mobile Communications. Uses TDMA instead of CDMA as its multiple access method. TDMA divides frequency band into time slots for each user or conversation. Mostly deprecated, but still used in some networks.
 
 -LTE?
+Long Term Evolution, aka 4G LTE. Offers download speeds of over 100 Mbps, LTE networks treat all data as IP packets, which makes it more efficient as it is integrated with the internet. Backwards compatible with 2G and 3G, although for data only (not voice). Can operate in FDD or TDD modes, VoLTE also allows for voice over LTE. It is the foundation for 4G in many parts of the world. 
 
 -3G?
+Third Generation, where 2G focused on voice, 3G was the first standard to fully support both voice and data. It was referred to as "mobile broadband" because it was the first time users had the broadband internet experience on mobile devices. 
 
 -4G?
+Fourth Generation, supports download speeds of over 100 Mbps in ideal conditions. LTE is technically a 4G technology, as well as WiMAX. 4G introduced carrier aggregation (combining multiple frequency bands), MIMO, and improved modulation schemes. Like 3G, it is all-IP; it is also backwards-compatible with its predecessors.
 
 -5G?
+Fifth Generation, 
 
 -MIMO?
+Multiple Input, Multiple Output; introduced as part of 802.11n (Wi-Fi 4), allows for multiple data streams to be simultaneously transmitted to a single device.
 
 -MU-MIMO?
+Multi-User Multiple-Input Multiple-Output; introduced as part of 802.11ac, allows for multiple data streams to be transmitted simultaneously to multiple devices.
 
+EXTRAS
 
+*Baseband?
+A single channel is used for transmitting data, ergo the entire bandwidth is used to send just one signal. Mostly used for short-distance communication, e.g. wired Ethernet LANs, USB, and HDMI.
 
-
+*Broadband?
+Simultaneous use of multiple channels or frequencies within a wider frequency range, ergo multiple signals can be sent simultaneously. Mostly used for long-distance connections, e.g. DOCSIS, DSL, and fiber. 
 
 
 
