@@ -1241,7 +1241,7 @@ Illustrates specifically the cabling in a network or segment, what types of cabl
 This is written up after inspecting the tentative location of a network installation, or the actual location of an existing network that wants to install additional equipment. Basically it is a report of the inspection of the venue or location, how suitable it is for the proposed installation. It is created as part of a physical inspection of the area, which will be used for either installation, upgrade, or maintenance of a network.
 
 -Audit and assessment report?
-
+Evaluation of a specific aspect of an organization's IT systems, processes, or controls. The evaluation is carried out by auditors or consultants, and seeks to remediate weaknesses in the organization's IT posture. Example: external pentesters who are contracted to test the organization's IT security.
 
 -Baseline configurations?
 Refers to the default state of a given network or device, also its default performance metrics. Baselines are useful for objectively measuring the variations in network/device performance and behaviors, e.g. users may complain that the network is slow on Fridays, but only by comparing the state of the network on that day with its baseline can we be certain.
@@ -1255,69 +1255,97 @@ Non-disclosure agreement, used to prevent someone or a group from sharing propri
 Service level agreement, legally binding document that outlines the expectations a client is entitled to regarding the service being provided. Example: Amazon issues a SLA to a prospective client that wants to set up an AWS instance, so the client knows exactly what they should expect and the level of service they would be entitled to if they do decide to go through with it.
 
 -MOU?
-Memorandum of understanding, 
+Memorandum of understanding, non-legally binding document that explains an agreement between two or more parties. Example: IT and Development write up an MOU to delineate their respective roles in managing the organization's tech and their respective jurisdictions.
 
 HIGH AVAILABILITY AND RECOVERY CONCEPTS
 
 -Load balancing?
+Entails the even distribution of network traffic and/or data processing across all available (only if equally efficient) paths and/or nodes, e.g. if there are two equally effective paths to an organization's gateway, load balancing would ensure that both of these paths get used with equal frequency in order to ensure low latency, even wear and tear on hardware, redundancy, and reliability.
 
 -Multipathing?
+Often used in SAN or NAS networks, allows for use of multiple physical or logical paths between the server and storage devices.
 
 -NIC teaming?
+Often implemented on servers, involves using multiple physical NICs as one logical interface in order to increase transmission speeds and reliability.
 
 REDUNDANT HARDWARE/CLUSTERS
 
 -Switches?
+A group of physical network switches that are configured to work as one logical switch.
 
 -Routers?
+A group of physical network routers that are configured to work as one logical router.
 
 -Firewalls?
+A group of physical network firewalls that are configured to work as one logical firewall.
 
 FACILITIES AND INFRASTRUCTURE SUPPORT
 
 -UPS?
+Uninterruptible Power Supply, often used in data centers in case of a power outage. It runs on battery power and often includes surge protection.
 
 -PDUs?
+Power Distribution Unit, often used in data centers to distribute power evenly and efficiently across devices. They offer many features to ensure that devices only need as much electricity as they actually need, these controls can be built into the PDU or the PDU can be managed with external software or hardware.
 
 -Generator?
+Backup power in the case of an electrical grid outage or other adverse event. These can run on gas, propane, battery, diesel. 
 
 -HVAC?
+Heating, Ventilation, Air Conditioning; these elements are incredibly important not only in a data center but also even just in an office. Servers especially run very hot. 
 
 -Fire suppression?
+Most commonly use water, but that can obviously damage equipment. Other options include gaseous agents, e.g. nitrogen, argon, FM-200, Novec 1230, etc.
 
 REDUNDANCY AND HIGH AVAILABILITY (HA) CONCEPTS
 
 -Cold site?
+Essentially an empty space rented from a provider that can be used to conduct business from; however since there is next to nothing in the space, resuming business from it will most likely take a week or longer.
 
 -Warm site?
+May have some equipment partially configured, but not nearly everything that is required to resume business operations at the same level as the primary site(s). Less expensive and less difficult to maintain than a hot site, but if operations need to be moved to the warm site, it will take longer than if the organization had a hot site set up.
 
 -Hot site?
+This is a fully equipped, configured, and running space rented out from a provider. It is more expensive and difficult to maintain than the last two types of sites, but the advantage to it is that business operations can resume (almost) immediately if the primary site(s) become unusable.
 
 -Cloud site?
+Space and equipment rented from a cloud provider that can be used to remotely continue business operations in the event that the on-premises site(s) become(s) unusable. 
 
 -Active-active vs active-passive?
+Redundancy/HA configurations: AA means all components/nodes in the cluster are active and handling request, they all share the workload. AP means that a single node in the cluster is actively serving requests, and all of the others are on standby; passive nodes become active only if the active one fails or runs into an error. 
+
+Some combination of the two is also common.
 
 -Multiple ISPs/diverse paths?
+MISP refers to using more than one ISP for data transmission, which increases redundancy and reliability in case one of the ISPs has a problem. DP refers to the use of multiple physical and/or logical paths in a network when transmitting from source to destination, and vice-versa. 
 
 -VRRP/FHRP?
+Virtual Router Redundancy Protocol/First Hop Redundancy Protocol. 
+
+VRRP is technically an example of a FHRP, it enables multiple routers to work together in a group using a virtual IP address as the gateway for the LAN. FHRP is a set of protocols/techniques used to provide redundancy to the default gateway/first hop router in a LAN. 
 
 -MTTR?
+Mean Time to Recovery, a metric used to measure the expected amount of time it will take to recover from an adverse event, e.g. server crash.
 
 -MTBF?
+Mean Time Between Failures, a metric used to describe the average amount of time it takes for a device or network to stop functioning and/or require maintenance.
 
 -RTO?
+Recovery Time Objective, the maximum acceptable amount of time it is expected to take to resume normal operations.
 
 -RPO?
+Recovery Point Objective, the maximum acceptable amount of data loss an organization is willing to endure after an adverse event.
 
 NETWORK DEVICE BACKUP/RESTORE
 
 -State?
+
 
 -Configuration?
 
 COMMON NETWORK SECURITY CONCEPTS
 
 -CIA?
+Confidentiality, Integrity, Accessibility.
 
 THREATS
 
