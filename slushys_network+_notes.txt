@@ -1338,66 +1338,90 @@ Recovery Point Objective, the maximum acceptable amount of data loss an organiza
 NETWORK DEVICE BACKUP/RESTORE
 
 -State?
-
+Describes the exact condition in which a device or network exists at a given point in time, in this case at the point in time in which a backup is created.
 
 -Configuration?
+Describes the precise settings with which a device or network is set up in order to get it to perform the tasks it needs to do, in the precise manner in which the organization needs. Configuration files (such as .cfg files in Cisco routers) are often used to quickly and easily set up new and/or additional devices with the exact settings that are needed.
 
 COMMON NETWORK SECURITY CONCEPTS
 
 -CIA?
-Confidentiality, Integrity, Accessibility.
+Confidentiality, Integrity, Accessibility. Everything we do in IT and cybersecurity revolves around these three principles.
 
 THREATS
 
 -Internal?
+These are threats that originate from inside of the organization, e.g. an IT employee who has just been laid off and is very unhappy about it. If their offboarding is not handled correctly, the disgruntled ex-employee could become an internal threat, for example by using their access to download sensitive information from the company and then sell it on the dark web.
 
 -External?
+These are the traditional threat actors: solo hackers, nation-state groups, APTs, ransomware gangs, etc.
 
 VULNERABILITIES
 
 -CVE?
+Common Vulnerabilities and Exposures, it is a highly respected list of the current most common IT security attack vectors. Each vulnerabilities is assigned a CVE ID. The CVE addresses software, hardware, firmware, and other types of vulnerabilities. Additionally, it often includes information about how to patch or mitigate the threat. 
 
 -Zero day?
+A vulnerability that is unknown to both the manufacturer/source and the IT security community as a whole. It is called a "zero day" because if it used to launch an attack, that attack would be carried out on day zero of the history of the collective knowledge of the attack. 
 
 -Exploits?
+An exploit is an instance of capitalizing on a vulnerability to launch an attack.
 
 -Least privilege?
+IT (security) principle that says that users should be given just enough access and permissions to do their jobs, but no more than that. This helps mitigate threats by limiting access to only what is strictly necessary. 
 
 -Role-based access?
+IT (security) principle that says that access/permissions should be based on a user's role, e.g. a Help Desk Technician probably does not need Domain Admin access to do their job, and therefore should not be given that access based on their specific role.
 
 -Zero trust?
+A principle in IT (security) that says that one should "never trust, always verify". Entails authentication, least privilege, micro-segmentation, encryption, and more.
 
 -Defense in depth?
+IT security approach that emphasizes multiple layers of security, not just one. Example: an organization uses role based access, least privilege, separation of duties, a centralized antivirus system across all devices, physical security systems, etc.
 
 -Network segmentation enforcement?
+Segmentation means dividing up an organization's network into smaller subnets. The purpose of this is to limit the potential for lateral movement in the case that an attacker does get into the network. Even if they manage to make it onto one of the subnetworks, segmentation would make it difficult (if not impossible) for them to move onto other, more critical subnets.
 
 -Perimeter network (aka DMZ)?
+A DMZ is a network segment that is used as a buffer between an organization's internal network and its external network (starts at the ISP router and includes the internet as a whole). It is recommended that any web (or other type of) servers that need to be available to the internet should live in the DMZ. By placing a firewall (and perhaps additional security devices) at the gateways of both the internal and external networks, it is possible to have a lot more control over the traffic that enters and exits the organization's network. 
 
 -Separation of duties?
+IT security principle that says that different components or steps of a process should be distributed among different agents. Example: an organization needs to replace a malfunctioning router. The senior netadmin might place the order and make the purchase using the company credit card, and the junior admin then collects it from the mailbox when it arrives. The senior admin might then create the configuration file, and the junior admin then installs it onto the new router. Separating duties in this manner makes it harder for any single agent to abuse their power, e.g. if it were not for this approach, the senior admin might steal the router for themself, or perhaps load malware onto it before installing it on the network.
 
 -Network access control?
+802.1x, encompasses many different techniques and procedures for ensuring that a network remains secure. These include: authentication, authorization, endpoint assessment, guest networking, policy enforcement, quarantine, remediation, and more.
 
 -Honeypot?
+A web server or other internet-facing device that is made to look like a vulnerable and worthwhile target, and is used to lure in would-be attackers. They are used for information-gathering purposes, e.g. an organization wants to know what types of attackers are interested in them as a target, so they set up a honeypot to get the hackers to reveal information about themselves. Honeypots can also be useful for learning about attack methods and strategies. 
 
 AUTHENTICATION METHODS
 
 -Multifactor?
+There are three main types of authentication methods: something you know, something you have, and something you are. MFA says users should utilize at least two of these categories, e.g. a key card as well as a PIN to enter the organization's headquarters.
 
 -TACACS+?
+Terminal Access Controller Access-Control System Plus. Protocol developed by Cisco for centralized and granular AAA (authorization, authentication, accounting) for network devices and services. Often used in combination with other security technologies, such as RADIUS and LDAP.
 
 -SSO?
+Single sign on, allows users to access all or most of their apps and services with a single set of credentials.
 
 -RADIUS?
+Remote Authentication Dial-In User Service. Used for centralized AAA, designed to be secure even across an insecure network, such as the internet. Supports passwords, tokens, and more. Uses client-server architecture. Uses a shared secret (PSK) between clients and RADIUS servers. Supports proxying with the setup of multiple RADIUS servers. 
 
 -LDAP?
+Lightweight Directory Access Protocol, used for managing directory services such as Active Directory, which store information about users, devices, resources, and other objects in a structured and hierarchical manner. Directory services are technically a type of database. LDAP supports search and query, authentication, authorization, security, SSO, and device management.
 
 -Kerberos?
+Network authentication protocol designed to be secure even over insecure networks, e.g. the internet. Uses strong encryption to ensure credentials can be transmitted securely. Used especially in Windows Active Directory networks, including those that span across continents or even further.
 
 -Local authentication?
+This occurs exclusively on the host, there is usually a file on the disk that contains hashes of the credentials. If the hashes of the credentials entered by the user match those on file, then access is granted. Advantages: quick and efficient, low overhead, minimal configuration, no credentials are transmitted across a network. Disadvantages: can pose security risks if the device is compromised, lack of centralized management, not scalable. 
 
 -802.1x?
+AKA NAC, 
 
 -EAP?
+Extensible Authentication Protocol, 
 
 RISK MANAGEMENT
 
