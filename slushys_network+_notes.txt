@@ -1418,10 +1418,10 @@ Network authentication protocol designed to be secure even over insecure network
 This occurs exclusively on the host, there is usually a file on the disk that contains hashes of the credentials. If the hashes of the credentials entered by the user match those on file, then access is granted. Advantages: quick and efficient, low overhead, minimal configuration, no credentials are transmitted across a network. Disadvantages: can pose security risks if the device is compromised, lack of centralized management, not scalable. 
 
 -802.1x?
-AKA NAC, 
+Encompasses many technologies and policies for protecting access to networks. Designed specifically for ethernet, it is often used in both LANs and WLANs. 802.1x focuses primarily on network device ports and operates at Layer 2 of the OSI model. Involves a supplicant, authenticator, and authentication server. Typically uses EAP to securely transmit authentication messages.
 
 -EAP?
-Extensible Authentication Protocol, 
+Extensible Authentication Protocol, allows for various authentication methods to be used in a standardized way. Often used in combination with other protocols (e.g. 802.1x) for authentication purposes in wireless networks as well as other types of connections, e.g. VPNs. Additional supported authentication methods include biometric, token-based, digital certificates, smart cards, and more. 
 
 RISK MANAGEMENT
 
