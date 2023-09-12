@@ -1426,54 +1426,75 @@ Extensible Authentication Protocol, allows for various authentication methods to
 RISK MANAGEMENT
 
 -Security risk assessments?
+Systemati evaluation of an organization's security, including IT, physical, and other types. 
 
 -Threat assessment?
+Process of evaluating and analyzing potential threats to an organization, IT or otherwise.
 
 -Vulnerability assessment?
+Evaluation of an organization's security posture that focuses on discovering vulnerabilities. 
 
 -Pentesting?
+Ethical hacking, pentesters can be internal to the organization or external contractors. Their job is to test the organization's security posture by attempting to breach the organization's apps, network, physical offices, employees, and more. A detailed report is provided to the organization by the pentesters at the end of the assignment.
 
 -Posture assessment?
+Evaluation of an organization's overall security posture.
 
 BUSINESS RISK ASSESSMENTS
 
 -Process assessment?
+Evaluation of an organization's IT processes, the goal is to gauge the efficiency and compliance thereof. Process assessments often follow industry frameworks and standards, e.g. ITIL, COBIT.
 
 -Vendor assessment?
+Evaluation of third-party vendors/suppliers who provide products and services to an organization. This is to ensure the vendors' products meet organizational and/or industry requirements as far as security, quality, compliance, reliability, etc. 
 
 -SIEM?
+Security Information and Event Management, software that allows for centralized monitoring and management of a network's IT security. Alerts are a central component of a good SIEM, as admins need to know when a potential breach has occurred. Another key advantage offered by a quality SIEM is automated log aggregation and parsing, as this can be incredibly cumbersome to perform manually. 
 
 COMMON TYPES OF ATTACKS
 
 TECHNOLOGY-BASED
 
--DOS/DDOS?
+-DoS/DDoS?
+Denial of Service/Distributed Denial of Service: DoS involves overloading a target server, usually a webserver, with requests such that it becomes overwhelmed and unable to fulfill any web requests, effectively bringing the website or service down entirely. Distributed DoS does the same thing, except that it uses a botnet to send the overwhelming number of web requests, which makes the attack method capable of taking down the websites of even very large organizations.
 
 -Botnet/C&C?
+A botnet is a network of computers that have been infected with malware such that these computers can be controlled from a central device or devices, i.e. the Command & Control center/host.
 
 -On path (MITM)?
+Traditionally, an on-path attack entails the attacker situating themself between a target device and the device's WAP, which allows the attacker to intercept and even modify the packets being transmitted. But this type of attack can also include an agent situating themself between a webserver and web client, email server and email client, etc.
 
 -DNS poisoning?
+Aka DNS spoofing, this type of attack entails altering the DNS cache data of a DNS server. The goal is to redirect DNS clients to malicious sites instead of the legitimate destination sites, where the malicious sites are probably run by the same group carrying out the DNS poisoning. The precise way it works is that the attacker sends fraudulent responses to the DNS server when it has to perform the process of recursion, then the target DNS server adds the fraudulent IP address to its cache.
 
 -VLAN hopping?
+Involves an attacker breaking out of the VLAN they initially infiltrated and getting into a separate VLAN in the organization's network. For instance, an attacker might initially make their way into the DMZ, which is specifically designed to isolate potential attackers if they do manage to get in. But then they might escape the DMZ and breach the internal network, which could be catastrophic. 
 
 -ARP spoofing?
+Involves injecting fraudulent MAC-to-IP address bindings into a target device's ARP table. When an ARP request goes out, asking for the MAC address that goes with a particular IP address, the rogue device replies and says that it is the device the source was looking for. If successful, the rogue device can then receive all traffic addressed to the original destination device, among other things.
 
 -Rogue DHCP?
+Involves introducing a fraudulent DHCP server into a network, which then replies to DHCP requests with its own IP addressing information. Since DHCP clients receive their default gateways from their DHCP servers, one common tactic is to assign a default gateway that is controlled by the attacker, which then allows them to intercept network traffic; this is among many other types of exploits. DHCP snooping is a good defense against this, but not the only one.
 
 -Rogue AP?
+Unauthorized access points that exist in a network, often set up by an employee or visitor, e.g. an employee brings their own WAP from home and connects it to the ethernet port in their office without asking IT about it. Since the AP hasn't been configured and isn't being monitored by trained professionals, it's quite possible that the settings on it could leave it to vulnerable to an attack. The worst part is that it can thus also be an attack vector into the organization's network. Attackers may also deliberately set up rogue access points, e.g. if they find an unprotected ethernet port somewhere in the building.
 
 -Evil twin?
+Involves mimicking a legitimate access point, i.e. setting up a malicious AP with the same SSID. Users will then connect to the evil twin and the attacker will be able to view and alter network traffic, among other potential actions.
 
 -Ransomware?
+This is a type of malware that encrypts the victim's hard drive. The victim is then ordered to pay a ransom in order to have their data decrypted. However, it is common for attackers to leave the data encrypted even after the victim pays the ransom.
 
 PASSWORD ATTACKS
 
 -Brute force?
+This type of attack entails running through all possible combinations, hence "brute force".
 
 -Dictionary?
+A dictionary attack is similar to a brute-force attack, except that the list of combinations is pre-determined and finite. Example: the historic RockYou text file is a list of all of the passwords that users on the site had configured on their accounts, it is still used to this day---for educational purposes, at least.
 
 -MAC spoofing?
+Involves broadcasting a fraudulent MAC address, e.g. for the purposes of traversing a MAC filter. 
 
 -IP spoofing?
 
