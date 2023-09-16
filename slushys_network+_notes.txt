@@ -1494,11 +1494,13 @@ This type of attack entails running through all possible combinations, hence "br
 A dictionary attack is similar to a brute-force attack, except that the list of combinations is pre-determined and finite. Example: the historic RockYou text file is a list of all of the passwords that users on the site had configured on their accounts, it is still used to this day---for educational purposes, at least.
 
 -MAC spoofing?
-Involves broadcasting a fraudulent MAC address, e.g. for the purposes of traversing a MAC filter. 
+Involves broadcasting a fraudulent MAC address, e.g. for the purposes of traversing a MAC filter. The source MAC address in the network packets coming from the rogue device is altered to match that of a trusted device on the LAN.
 
 -IP spoofing?
+Involves advertising a fraudulent IP adress, e.g. to get past a firewall. Since firewalls and similar security technologies often rely on IP addresses, this can be a very potent attack. Like MAC spoofing, IP spoofing involves changing the network packet's source IP.
 
 -Deauthentication?
+
 
 -Malware?
 
@@ -1514,10 +1516,416 @@ HUMAN AND ENVIRONMENTAL
 
 -Shoulder surfing?
 
+NETWORK HARDENING TECHNIQUES
 
+-Secure SNMP?
 
+-Router Advertisement (RA) Guard?
 
+-Port security?
 
+-Dynamic ARP inspection?
 
+-Control plane policing?
+
+-Private VLANs?
+
+-Disable unneeded switchports?
+
+-Disable unneeded network services?
+
+-Change default passwords?
+
+-Password complexity/length?
+
+-Enable DHCP snooping?
+
+-Change default VLAN?
+
+-Patch and firmware management?
+
+-Access control list (ACL)?
+
+-Role-based access?
+
+FIREWALL RULES
+
+-Explicity deny?
+
+-Implicit deny?
+
+WIRELESS SECURITY
+
+-MAC filtering?
+
+-Antenna placement?
+
+-Power levels?
+
+-Wireless client isolation?
+
+-Guest network isolation?
+
+-Preshared keys (PSK)?
+
+-EAP?
+
+-Geofencing?
+
+-Captive portal?
+
+-IoT Access considerations?
+
+REMOTE ACCESS METHODS AND SECURITY
+
+-Site-to-site VPN?
+
+-Client-to-site VPN?
+
+-Split tunnel vs. full tunnel?
+
+-Remote desktop connection?
+
+-Remote desktop gateway?
+
+-SSH?
+
+-Virtual network computing (VNC)?
+
+-Virtual desktop?
+
+-Authentication and authorization considerations?
+
+-In-band vs out-of-band management?
+
+PHYSICAL SECURITY
+
+DETECTION METHODS
+
+-Camera?
+
+-Motion detection?
+
+-Asset tags?
+
+-Tamper detection?
+
+PREVENTION METHODS
+
+-Employee training?
+
+-Access control hardware?
+
+-Badge readers?
+
+-Biometrics?
+
+-Locking racks?
+
+-Locking cabinets?
+
+-Access control vestibule (mantrap)?
+
+-Smart lockers?
+
+ASSET DISPOSAL
+
+-Factory reset/wipe configuration?
+
+-Sanitize devices for disposal?
+
+NETWORK TROUBLESHOOTING
+
+IDENTIFY THE PROBLEM
+
+-Gather information?
+
+-Question users?
+
+-Identify symptoms?
+
+-Determine if anything has changed?
+
+-Duplicate the problem, if possible?
+
+-Approach multiple problems individually?
+
+ESTABLISH A THEORY OF PROBABLE CAUSE
+
+-Question the obvious?
+
+-Consider multiple approaches?
+
+-Top-to-bottom/bottom-to-top of OSI model?
+
+-Divide and conquer?
+
+TEST THEORY TO DETERMINE CAUSE
+
+-If theory is confirmed, determine next steps to resolve problem?
+
+-If theory is not confirmed, re-establish a new theory or escalate?
+
+-Establish plan of action to resolve the problem and identify potential effects?
+
+-Implement the solution or escalate as necessary?
+
+-Verify full system functionality and, if applicable, implement preventive measures?
+
+-Document findings, actions, outcomes, and lessons learned?
+
+TROUBLESHOOT COMMON CABLE CONNECTIVITY ISSUES
+
+SPECIFICATIONS AND LIMITATIONS
+
+-Throughput?
+
+-Speed?
+
+-Distance?
+
+CABLE CONSIDERATIONS
+
+-Shielded and unshielded?
+
+-Plenum and riser-rated?
+
+CABLE APPLICATION
+
+-Rollover cable/console cable?
+
+-Crossover cable?
+
+-Power over Ethernet (PoE)?
+
+COMMON ISSUES
+
+-Attenuation?
+
+-Interference?
+
+-Decibel (dB) loss?
+
+-Incorrect pinout?
+
+-Bad ports?
+
+-Open/short?
+
+-Light-emitting diode (LED) status indicators?
+
+-Incorrect transceivers?
+
+-Duplexing issues?
+
+-Transmit (TX) and Receive (RX) reversed?
+
+-Dirty optical cables?
+
+COMMON TOOLS
+
+-Cable crimper?
+
+-Punchdown tool?
+
+-Tone generator?
+
+-Loopback adapter?
+
+-Optical time-domain reflectometer (OTDR)?
+
+-Multimeter?
+
+-Cable tester?
+
+-Wire map?
+
+-Tap?
+
+-Fusion splicers?
+
+-Spectrum analyzers?
+
+-Snips/cutters?
+
+-Cable stripper?
+
+-Fiber light meter?
+
+NETWORK SOFTWARE TOOLS AND COMMANDS
+
+SOFTWARE TOOLS
+
+-WiFi analyzer?
+
+-Protocol analyzer/packet capture?
+
+-Bandwidth speed tester?
+
+-Port scanner?
+
+-iperf?
+
+-NetFlow analyzers?
+
+-Trivial File Transfer Protocol (TFTP) server?
+
+-Terminal emulator?
+
+-IP scanner?
+
+COMMAND LINE TOOL
+
+-ping?
+
+-ipconfig/ifconfig/ip?
+
+-nslookup/dig?
+
+-traceroute/tracert?
+
+-arp?
+
+-netstat?
+
+-hostname?
+
+-route?
+
+-telnet?
+
+-tcpdump?
+
+-nmap?
+
+BASIC NETWORK PLATFORM COMMANDS
+
+-show interface?
+
+-show config?
+
+-show route?
+
+TROUBLESHOOT WIRELESS CONNECTIVITY
+
+SPECS AND LIMITATIONS
+
+-Throughout?
+
+-Speed?
+
+-Distance?
+
+-Received signal strength indication (RSSI)?
+
+-Effective isotropic radiated power (EIRP)?
+
+CONSIDERATIONS
+
+-Antennas?
+
+-Placement?
+
+-Type?
+
+-Polarization?
+
+-Channel utilization?
+
+-AP association time?
+
+-Site survey?
+
+COMMON ISSUES
+
+-Interference?
+
+-Channel overlap?
+
+-Antenna cable attenuation/signal loss?
+
+-RF attentuation/signal loss?
+
+-Wrong SSID?
+
+-Incorrect passphrase?
+
+-Encryption protocol mismatch?
+
+-Insufficient wireless coverage?
+
+-Captive portal issues?
+
+-Client disassociation issues?
+
+TROUBLESHOOT GENERAL NETWORKING ISSUES
+
+CONSIDERATIONS
+
+-Device configuration review?
+
+-Routing tables?
+
+-Interface status?
+
+-VLAN assignment?
+
+-Network performance baselines?
+
+COMMON ISSUES
+
+-Collisions?
+
+-Broadcast storm?
+
+-Duplicate MAC address?
+
+-Duplicate IP address?
+
+-Multicast flooding?
+
+-Assymetrical routing?
+
+-Switching loops?
+
+-Routing loops?
+
+-Rogue DHCP server?
+
+-DHCP scope exhaustion?
+
+IP SETTING ISSUES
+
+-Incorrect gateway?
+
+-Incorrect subnet mask?
+
+-Incorrect IP address?
+
+-Incorrect DNS?
+
+-Missing route?
+
+-Low optical link budget?
+
+-Certificate issues?
+
+-Hardware failure?
+
+-Host-based/network-based firewall settings?
+
+-Blocked services, ports, or addresses?
+
+-Incorrect VLAN?
+
+-DNS issues?
+
+-NTP issues?
+
+-BYOD challenges?
+
+-Licensed feature issues?
+
+-Network performance issues?
 
 
