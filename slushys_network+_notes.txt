@@ -1500,25 +1500,32 @@ Involves broadcasting a fraudulent MAC address, e.g. for the purposes of travers
 Involves advertising a fraudulent IP adress, e.g. to get past a firewall. Since firewalls and similar security technologies often rely on IP addresses, this can be a very potent attack. Like MAC spoofing, IP spoofing involves changing the network packet's source IP.
 
 -Deauthentication?
-
+The attacker floods a network with deauthentication frames in order to disrupt a particular connection or simply the entire network. This type of attack works because deauth frames are actually perfectly legitimate, they are used by admins to disrupt connections to their (W)APs as needed. The attacker ensures that the deauth frames appear to be coming from the (W)AP, so that its connected devices accept the deauth frames and agree to disconnect.
 
 -Malware?
+Shortened version of "malicious software", encompasses many different kinds of programs that are designed to cripple computer systems, take control of them, extract information from them, etc. There are so many different types of malware in 2023 that it is beyond the scope of a single exam objective to list them all. Some common examples are ransomware, viruses, and Trojans.
 
 HUMAN AND ENVIRONMENTAL
 
 -Social engineering?
+Involves deceiving and manipulating human beings in order to gain access to restricted information systems and/or buildings. This is actually perhaps the most common attack vector, as apparently it is easier to exploit vulnerabilities in humans than it is in computers or physical structures. Social engineering is commonly done over the phone, but can also be done over such communications systems as instant messaging or email.
 
 -Phishing?
+Involves crafting a URL or some other mechanism to lure end users onto a malicious website designed to look like a legitimate website they might access, e.g. Gmail.com. The goal is to deceive end users into sharing their credentials or other sensitive information, whether that is on the website or through some other mechanism. There are many variations of this type of attack, e.g. a user clicks on a link in a text message from a number claiming to be their phone service provider, and when they land on the website malware gets downloaded and run automatically on their computer. Other variants include vishing (voice phishing), spear phishing (targeting a specific, usually high-level, member of an organization), and smishing (SMS phishing). 
 
 -Tailgating?
+Involves an unauthorized and unauthenticated user closely following an authorized and authenticated user into a restricted area such that they bypass the security controls in place. 
 
 -Piggybacking?
+Similar to tailgating, except that piggybacking can be unintentional and/or the two people might be walking side by side rather than one trailing behind the other in order to deliberately gain unauthorized access to a restricted area. 
 
 -Shoulder surfing?
+Involves an attacker looking over the shoulder (or thereabouts) of an end user in order to see what they are doing on the computer, usually they are entering credentials or looking at some kind of sensitive information.
 
 NETWORK HARDENING TECHNIQUES
 
 -Secure SNMP?
+
 
 -Router Advertisement (RA) Guard?
 
