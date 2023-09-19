@@ -1525,13 +1525,18 @@ Involves an attacker looking over the shoulder (or thereabouts) of an end user i
 NETWORK HARDENING TECHNIQUES
 
 -Secure SNMP?
-
+SNMPv1 lacked very many security features, ergo SNMPv3 was created to help fill in the gaps. Security features added: authentication, authorization, encryption, integrity, USM (user-based security model), VACM (view-based access control model). 
 
 -Router Advertisement (RA) Guard?
+Network security feature used to protect against Router Advertisement Spoofing and/or Rogue Router Advertisement attacks, which can occur in IPv6 networks. RAs are a normal and essential component of IPv6 networks because they allow routers to communicate with each other and gain information about the status of the network. RA Spoofing then, is when an attacker leverages these network building blocks to send out fraudulent and malicious RAs. The attacker can use RA Spoofing to divert network traffic to a device controlled by them, perform a DoS attack on the network, or execute a MitM/on-path attack, and more. 
+
+RA Guard, then, is implemented on network routers and/or switches. It works by monitoring, validating, and blocking RAs based on whether they are deemed to be legitimate or not. 
 
 -Port security?
+Involves securing network switchports, relies primarily on MAC address filtering. MAC address limits on a particular port are also common, this means that only a give number of devices can connect to that port before any further attempts are denied. MAC address limits can be configured manually or dynamically. Admins can configure actions to be taken when a violation does occur, e.g. sending an alert, logging the event, shutting down the port, etc.  
 
 -Dynamic ARP inspection?
+Network security feature typically implemented on network switches. 
 
 -Control plane policing?
 
