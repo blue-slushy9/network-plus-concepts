@@ -1536,45 +1536,66 @@ RA Guard, then, is implemented on network routers and/or switches. It works by m
 Involves securing network switchports, relies primarily on MAC address filtering. MAC address limits on a particular port are also common, this means that only a give number of devices can connect to that port before any further attempts are denied. MAC address limits can be configured manually or dynamically. Admins can configure actions to be taken when a violation does occur, e.g. sending an alert, logging the event, shutting down the port, etc.  
 
 -Dynamic ARP inspection?
-Network security feature typically implemented on network switches. 
+Network security feature typically implemented on network switches to protect against ARP spoofing, etc. Works by inspecting and verifying ARP packets as they travel across the network, one method it uses is to maintain a database of valid IP-to-MAC address bindings. These bindings are usually collected and maintained through DHCP snooping, or manually. If the information in the ARP packet matches the database, then the packet is allowed through. If a suspicious packet is detected, DAI can drop it or log the event. 
 
--Control plane policing?
+-Control plane policing (CoPP)?
+In network devices, there are two primary planes of operation: data and control. In the data plane, the device forwards packets based on the routing decisions made at the control plane. The control plane is where the device manages its own settings and features, e.g. routing protocols, management interfaces. 
+
+CoPP, then, focuses on protecting the CP from such attacks as DoS, packet flooding, resource exhaustion. CoPP works by controlling the traffic that reaches the control plane. Traffic gets classified by source IP, destination IP, protocols, etc. Depending on its details, a packet or group thereof may be set aside for analysis. CoPP also enforces rate limits, i.e. a certain number of packets in a given time frame. All of this keeps the control plane functioning properly, even during times of high traffic and instability.
 
 -Private VLANs?
+These are sub-VLANs, a VLAN within a VLAN. Isolated PVLANs allow devices therein to communicate with the wider VLAN, but not with each other. Community PVLANs allow devices therein to communicate with each other but not with devices in other Community VLANs or Isolated PVLANs. There is also usually a "promiscuous port" that can be used to communicate with all secondary VLANs within the primary VLAN. 
 
 -Disable unneeded switchports?
+Switchports are often an attack vector, so if you aren't going to need some of them it is best to disable them so they do not get exploited. It's important to document which ports are going to be used and which are going to be disabled. Then you would typically access the switch's management interface, can be GUI or CLI. It's important to audit/monitor the switch configuration over time in order to ensure the correct ports remain enabled or disabled.
 
 -Disable unneeded network services?
+Services are often attack vectors, so if you don't actually need one running then it is best to disable it. Again, documentation is going to be essential. Let the principles of access control and least privilege guide you, grant only just enough access for the job to get done. Some services are baked into the OS, others are added on. Obviously disable any inherently insecure protocols, e.g. Telnet. It is a good idea to configure ACLs and/or firewalls in addition to disabling the services, in case they should be re-activated for whatever reason. Run tests on your configuration, of course. Make sure you are doing ongoing auditing/monitoring. Backup and restoration policies/procedures for these services are important, in case they should ever go down.
 
 -Change default passwords?
+Default passwords are often public knowledge, ergo it is extremely insecure to continue using them after installing a device or service on the network. Some common default passwords: Admin/Admin, Root/Root; sometimes the default password is no password at all. In addition to traditional network devices (routers, switches, servers), it is also important to check default password configuration on network cameras, IoT devices, etc.
 
 -Password complexity/length?
+NIST has said that password length is far more important than complexity, hence passphrases. Nowadays, it is recommended that passwords be at least 40 characters. Password complexity isn't much of a consideration anymore, as attackers do not know whether any single character is a letter, number, or symbol.
 
 -Enable DHCP snooping?
+DHCP snooping is a network security technique that helps prevent rogue/unauthorized DHCP server attacks. To enable it, you can log onto the switch and use the GUI or CLI management interface.
 
 -Change default VLAN?
+The default VLAN is VLAN 1, for which no VLAN tag is used. You should fairly meticulously plan your new VLAN before making any changes, including documenting the port configurations and considering how the new VLAN may affect existing connections, if any. Once you are certain you are ready to move forward with the new VLAN, you should create a backup of your existing configuration in case any issues arise. Then you'll go into the management interface on the switch and actually make your changes. Finally, you should test your new configuration in a controlled environment to make sure there aren't any issues.
 
 -Patch and firmware management?
+Patches provide security as well as feature/functionality fixes. Hackers often target unpatched systems, so it is a good idea to apply them as soon as they are released. However, it is also important to test patches in a controlled environment, because they do sometimes cause things to break or become incompatible with the wider network. Automated patch deployment tools can be very useful because IT teams often do not have time to apply patches individually to all of their organization's devices. 
+
+Firmware can be thought of as low-level software for hardware, it lives on the device and allows it to carry out its functions. Firmware updates are important for reasons of security, compatibility (with other devices on network), performance, and bug fixes. What was said about patch management above also applies to firmware management.
 
 -Access control list (ACL)?
+A common tool used in operating systems and firewalls (to give just a few examples) to control access to various resources. In the case of an operating system, you might have an ACL on a folder in Windows that controls access to it and its contents, e.g. if a particular user wants to access that folder but they are not on the ACL, then they won't be able to. Traditional firewalls are actually glorified ACLs that control access to the network based on whether the source IP is on the allow list (ACL) or not.
 
 -Role-based access?
+A principle in IT and infosec that says that a user's role in the organization should determine their level of access to the organization's resources. For example, the IT team should have access to all or most of the technology used by the organization, but they should not have access to financial records (unless they interact directly with IT operations); instead, the Finance department should have access to the financial records, but not the technology.
 
 FIREWALL RULES
 
 -Explicity deny?
+A type of entry in a firewall ACL that explicitly states a certain IP address (or range thereof) is to be denied access to the network. Alternatively you could have a "deny all" statement.
 
 -Implicit deny?
+A type of entry (or, rather, non-entry) in a firewall ACL. With this type of entry, you would typically have one or several allowed source IPs, and then at the end no "deny" statement at all. This is the same as saying to allow only the entries on the ACL, and deny all others.
 
 WIRELESS SECURITY
 
 -MAC filtering?
+Aka Wireless access control, a whitelist or blacklist is configured with MAC addresses then MAC filtering has to be enabled on the WAP. Unfortunately, for larger and/or more complex networks configuring the lists can be cumbersome, and it would also have to be maintained. MAC filtering also adds a small amount of overhead to network device processing. Luckily, there are dynamic MAC filtering options available.
 
 -Antenna placement?
+Very important in wireless security, as having an antenna in the wrong place can leave it vulnerable to wireless attacks. Wireless site surveys and wireless network auditing/monitoring can be useful for figuring out placement. Signal strength can also play a role, as a stronger signal will extend further out, which may open up an attack surface. 
 
 -Power levels?
+Power levels on a WAP have a direct effect on how far out a signal will reach. Depending on your topography, you may need to be mindful of the power levels on your WAPs so that you don't open up an attack surface. Monitoring power levels can also help in detecting rogue access points. 
 
 -Wireless client isolation?
+Network security feature that prevents wireless clients from communicating 
 
 -Guest network isolation?
 
