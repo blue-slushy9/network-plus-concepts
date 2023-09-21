@@ -1595,27 +1595,38 @@ Very important in wireless security, as having an antenna in the wrong place can
 Power levels on a WAP have a direct effect on how far out a signal will reach. Depending on your topography, you may need to be mindful of the power levels on your WAPs so that you don't open up an attack surface. Monitoring power levels can also help in detecting rogue access points. 
 
 -Wireless client isolation?
-Network security feature that prevents wireless clients from communicating 
+Network security feature that prevents wireless clients in the same WLAN from communicating directly with one another. Instead, they have to go through the switch or WAP. This is to enhance privacy and security. WCI is commonly used in public wifi, guest networks, shared workspaces, etc. WCI can be enabled in the router or WAP's management interface.
 
 -Guest network isolation?
+Network security practice that involves creating a separate VLAN or subnet for guests in order to not give them access to the organization's primary network(s), where sensitive data and perhaps even servers reside. This is a good idea for reasons of security, privacy, and network performance. The guest network may use a captive portal.
 
 -Preshared keys (PSK)?
+These are keys/passwords that are shared ahead of time, i.e. there is no electronic exchange of keys going on as in PKI. A common example is when authorized users of a certain network are given the WAP password on a piece of paper, e.g. on the receipt at a coffee shop. Commonly used in SOHO networks due to their simplicity and lack of overhead.
 
 -EAP?
+Extensible Authentication Protocol, this is a framework that allows you to use multiple authentication protocols at the same time. Widely used in wireless networking, VPNs, etc. Common "EAP methods" (i.e. authentication protocols) include TLS and MSCHAP. 
 
 -Geofencing?
+A geofence is a virtual boundary defined by GPS, RFID, WiFi, cellular data, etc. (any technology with location awareness). Traversing these boundaries then elicits a certain action on a device, e.g. launching an app or sending a notification to the device. 
 
 -Captive portal?
+This is a webpage that commonly opens up when a user connects to a guest network, e.g. airport Wi-Fi. It often includes the AUP for the guest network, as well as a prompt for credentials (these are usually provided by the organization that hosts the guest network). After users have authenticated and/or accepted the terms of service, they are then redirected to the webpage or webapp they were originally attempting to access. 
 
 -IoT Access considerations?
+IoT devices are rather unique in the world of tech, they are often incredibly vulnerable to cyberattacks due to their lack of ability to receive updates, or simply the manufacturer's lack of providing updates. In order to secure these devices, it is important to use device certificates, secure APIs, etc. It is a good idea to create a separate VLAN for IoT devices to live in, or perhaps even a separate VLAN for each IoT device. You can then configure ACLs/firewalls for the device to communicate only as necessary. You should encrypt the IoT traffic. Physical security is an important consideration for IoT as these are physical devices connected to your network, so they can be hacked if someone gains access to it. 
 
 REMOTE ACCESS METHODS AND SECURITY
 
 -Site-to-site VPN?
+A VPN that connects two specific locations to one another. You might be a company with many branch offices and one headquarters, so you might establish a VPN connection between every branch office back to headquarters. The VPN would allow for secure, encrypted communication over the internet (which is an untrusted network if there ever was one). Common encryption protocols include TLS and IPsec. Discrete subnets may be configured for each VPN connection.
 
 -Client-to-site VPN?
+A site-to-site VPN connects entire networks/organizations to one another, whereas a client-to-site VPN connects a single user to a network/organization. The user will need to have a VPN client installed on their device(s). Split tunneling may be used to send sensitive information over the VPN connection and all other information over the internet. 
 
 -Split tunnel vs. full tunnel?
+Two different approaches to routing traffic through a VPN. As mentioned in the previous entry, split tunnel means part of the traffic (the sensitive information) goes through the encrypted tunnel and everything else just goes through the plain old internet (with some encryption of course, but not the same level thereof). The VPN client typically decides which packets will go through which channel. This is done for bandwidth optimization and load balancing, i.e. easing the load on the VPN gateways and servers. Security implications include the mixing of internal network data with general internet traffic, which is often insecure. 
+
+In full tunneling, all packets are routed through the VPN tunnel. This is advantageous from a security standpoint but it does put a lot of stress on the VPN architecture, which may or may not be worth it depending on the needs of the organization. 
 
 -Remote desktop connection?
 
