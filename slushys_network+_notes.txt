@@ -1626,27 +1626,37 @@ A site-to-site VPN connects entire networks/organizations to one another, wherea
 -Split tunnel vs. full tunnel?
 Two different approaches to routing traffic through a VPN. As mentioned in the previous entry, split tunnel means part of the traffic (the sensitive information) goes through the encrypted tunnel and everything else just goes through the plain old internet (with some encryption of course, but not the same level thereof). The VPN client typically decides which packets will go through which channel. This is done for bandwidth optimization and load balancing, i.e. easing the load on the VPN gateways and servers. Security implications include the mixing of internal network data with general internet traffic, which is often insecure. 
 
-In full tunneling, all packets are routed through the VPN tunnel. This is advantageous from a security standpoint but it does put a lot of stress on the VPN architecture, which may or may not be worth it depending on the needs of the organization. 
+In full tunneling, all packets are routed through the VPN tunnel. This is advantageous from a security standpoint but it does put a lot of stress on the VPN architecture, which may or may not be worth it depending on the needs of the organization. Organizations that require deep network monitoring may choose full tunnel for the access to 100% of the traffic. 
 
 -Remote desktop connection?
+There are a variety of apps that provide this functionality, most notably RDP and VNC. In order to harden these systems as much as possible, one can implement authentication, encryption, network isolation, session timeouts, strong passwords, session timeout, MFA, logging and monitoring, etc. There is also the option to use a remote desktop gateway (see below). 
 
 -Remote desktop gateway?
+Aka Terminal Services Gateway (old Windows term), component of MS RDS suite that acts as a proxy/intermediary server that helps facilitate secure remote desktop connections. This server manages encryption, authentication, session initiation and termination, auditing and logging, etc.
 
 -SSH?
+Secure SHell, the gold standard of remote terminal connections. It employs encryption, authentication, PKI, port forwarding, logging and auditing by the SSH servers, etc. It includes utilities like SCP (Secure Copy Protocol) and SFTP (SSH File Transfer Protocol). It is recommended to disable root login (as well as any unused features) and log onto a user account with administrative privileges instead. 
 
 -Virtual network computing (VNC)?
+Technology that allows for remote desktop connections. By default VNC does not use encryption, ergo it is very important to use a secure variant of VNC, e.g. VNC over SSH or VNC over VPN. VNC typically utilizes password-based authentication, however it is recommended to use PKI and/or MFA as that is more secure. ACLs and/or firewalls are recommended so only trusted IP networks are able to connect. Change the default TCP port so that it isn't an easily findable target for hackers. 
 
 -Virtual desktop?
+VDI means Virtual Desktop Infrastructure. It is a technology that allows for the creation and management of virtual desktop environments on remote servers, which users can then connect to over the internet. Because in a VDI environment, multiple desktops run on the same server or cluster, it is important that the proper data isolation mechanisms are in place, otherwise other users might be able to access your data. Advantages of VDI include centralized management and convenience for end users, however it's important to make sure the proper security controls are in place.
 
 -Authentication and authorization considerations?
+Authentication is about verifying who you are; authorization is about granting a certain level of access to organizational resources based on who you are.
 
 -In-band vs out-of-band management?
+In-band means managing and monitoring network devices using the same channels that transmit production data to and from those devices. IB management offers simplicity, and cost-effectiveness as there is no need to set up and/or maintain additional communication channels. Disadvantages of IB management include network vulnerability (both production data and management data will be compromised if a successful attack occurs) and traffic congestion. 
+
+OOB management involves a physically separate channel of communication to the production data. It may even use different protocols than the production channel. It is used in instances where security and reliability are crucial, e.g. data centers, telecom facilities, NOCs, etc. It is more secure, reliable, and fault-tolerant as any network issues will not carry over into production. Disadvantages include complexity, lack of cost-effectiveness, and overhead.
 
 PHYSICAL SECURITY
 
 DETECTION METHODS
 
 -Camera?
+Often part of a larger security system that includes VMS (Video Monitoring Systems), analytics software, and access control systems. 
 
 -Motion detection?
 
