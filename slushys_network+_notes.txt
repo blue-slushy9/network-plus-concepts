@@ -1656,7 +1656,7 @@ PHYSICAL SECURITY
 DETECTION METHODS
 
 -Camera?
-Often part of a larger security system that includes VMS (Video Monitoring Systems), analytics software, and access control systems. 
+Often part of a larger security system that includes VMS (Video Monitoring Systems), analytics software, and access control systems. Many modern cameras come with built-in analytics software and AI, which allows them to detect actual, attempted, or potential intrusions and notify the proper authorities, as well as log the event. It is important to remember that cameras, especially if connected to the network, can be hacked and therefore it is important to secure them as much as possible, physically and as far as firmware, etc. 
 
 -Motion detection?
 
