@@ -1659,22 +1659,30 @@ DETECTION METHODS
 Often part of a larger security system that includes VMS (Video Monitoring Systems), analytics software, and access control systems. Many modern cameras come with built-in analytics software and AI, which allows them to detect actual, attempted, or potential intrusions and notify the proper authorities, as well as log the event. It is important to remember that cameras, especially if connected to the network, can be hacked and therefore it is important to secure them as much as possible, physically and as far as firmware, etc. 
 
 -Motion detection?
+Detects and responds to physical movements or changes within a defined area. Motion detection systems typically consist of motion sensors, cameras, alarms, and software for monitoring and analysis. There are various different subtypes of sensors: infrared (detects heat signatures), ultrasonic (use sound waves to detect motion by bouncing sound waves off objects and analyzing reflections for changes), microwave (emit microwave signals and analyze reflections), video motion detection (use cameras to detect changes in video frame). Modern cameras may use advanced analytics and AI to differentiate between normal and abnormal movement, in order to reduce false alarms. These devices often keep logs and produce reports on motion events. 
 
 -Asset tags?
+Physical labels or tags that are placed on IT assets, e.g. computers, servers, routers, etc. The tags are used to identify and track assets within an organization's inventory. The tag contains some type of identifying information, e.g. serial number, barcode, QR code, RFID chip, etc. The tag can also include information about the device's maintenance history, warranty details, service requirements, etc. Asset tags are often required for compliance with regulations and standards. Some asset tags are tamper-evident for added security. Tags are often integrated with IT asset management software.
 
 -Tamper detection?
+Measures and technologies used to detect and respond to unauthorized access, tampering, or physical attacks on IT assets, infrastructure, or security systems. In such a situation, tamper detection would alert the IT admins and/or the leaders of the organization. Can include sensors, alarms, cameras, access control devices, and software for monitoring and alerting. There are physical tamper sensors, vibration and shock sensors, IDSes, video surveillance, seals and enclosures, etc. Tamper detection is often integrated with the organization's larger security systems. Organizations should have predefined responses to these alerts, in the case that there is an incident.
 
 PREVENTION METHODS
 
 -Employee training?
+Non-tech members of an organization are often targets for hackers as they generally know significantly less about IT security than tech staff. Lateral movement is often the next step, which is often successful in escalating privileges and then launching attacks with those permissions. Other types of attacks include phishes and ransomware---security really is everybody's responsibility!
 
 -Access control hardware?
+Example: access control vestibule. This type of hardware helps in preventing physical attacks. 
 
 -Badge readers?
+An essential component in virtually every organization's physical security (unless they are entirely virtual), badge readers greatly mitigate the ability of a physical attacker from entering the organization's physical property. They can be hacked of course, using at least a few different methods, but for the most part they do help protect the building.
 
 -Biometrics?
+Another incredibly valuable device in physical security, most likely harder to fool than a simple badge reader as it scans for specific physical features on bodies of the organization's members, e.g. retinal scan, fingerprint scan. It is still possible to fool these systems in one way or another, but in general they are more secure than badge readers. 
 
 -Locking racks?
+Server cabinets/racks with locks, for added security. Can use a key, combination, keypad, or even a biometric scanner. In addition to protecting networking equipment from theft, locking racks can also have safeguards against dust, debris, electromagnetic interference (EMI), radio-frequency interference (RFI), etc. Some locking racks may have remote monitoring and management capabilities. 
 
 -Locking cabinets?
 
