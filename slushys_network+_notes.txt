@@ -1782,24 +1782,36 @@ COMMON ISSUES
 Signal loss over distance, or due to obstructions in the case of wireless signals. In wired connections, low-quality media can cause loss/degradation of the signal. EMI and RFI are considerations with wired and wireless signals, hence shielded cables and multiple transmission frequencies. In fiber connections, factors such as light dispersion come into play.
 
 -Interference?
+Mostly a problem in wireless networks after the advent of network switches, before that there was CSMA/CD. Wireless signals can interfere with one another, especially if they are at the same frequency. Interference by other factors are also possible, e.g. EMI and RFI, even the weather. Crosstalk is another form of signal interference, it can occur if cables aren't properly insulated and/or twisted. Jamming is when an attacker floods a network with noise and/or signals in order to prevent data transmission. 
 
 -Decibel (dB) loss?
+Reduction in signal strength or power as signals travel through a network; a measure of signal attenuation. Positive dB values indicate signal loss, negative values indicate signal gain. In fiber cables, bend radius and splice losses must be taken into consideration. Each component in the network introduces a level of dB loss. 
 
 -Incorrect pinout?
+The wires in a network cable do not connect to the correct pins on one or both ends of the cable. This can cause connectivity issues, data transmission issues, and even damage to networking equipment. This can occur from human error (e.g. during crimping), manufacturing error, and/or cable damage. Cable testers and other such tools can be used to ensure everything is as it should be before installation.
 
 -Bad ports?
+Network port on a networking device that isn't functioning as it should. The symptoms are pretty obvious and do not need to be listed here. Causes include physical damage, electrical damage, hardware (manufacturing) defects, overloading (overheating, too much data, too much electrical power), corrosion and contamination, software or firmware issues, etc. You can troubleshoot with cable testers and other such tools, as well as port diagnosis tools in the CLI or GUI. 
 
 -Open/short?
+An open is a disruption in a cable such that many of the connections are lost. Obviously this would engender signal loss. 
+
+A short is when there exist unintended connections between the wires in the cables, this can be because of an open in the cable or it can happen internally. Short circuits can cause electrical interference and data corruption. Cable repair may be possible in some cases, a continuity tester and/or a cable tester can be useful for diagnosing.
 
 -Light-emitting diode (LED) status indicators?
+These provide visual indication of the status of network devices. Generally, if the power light is on and green then the device is up and running correctly. The link state LED might be green or amber, both generally indicate the device is functioning correctly. These lights may blink at different rates to indicate data is being transmitted to/from it, and at what rate. 
 
 -Incorrect transceivers?
+Optical or electrical transceiver modules that do not match the specifications of the networking equipment. Transceivers convert electrical signals into optical signals, or vice-versa. Transceivers must be compatible with the networking equipment to which they are affixed.
 
 -Duplexing issues?
+Refers to the communicated mode used for data transmission between two devices (half-duplex or full-duplex). If both endpoints, as well as any intermediary devices, are not configured for the same mode, it can cause issues. Autonegotiation is a very useful feature because it allows devices to decide their own mode of communication. However, it is important to keep in mind that autonegotiation may not always work. 
 
 -Transmit (TX) and Receive (RX) reversed?
+TX and/or RX wires or ports have been swapped. Can occur in ethernet, fiber, or serial connections. For ethernet and/or TP cables, cable testers and other such tools can help in diagnosing reversed pinouts. In fiber cables, you can use optical power meters or OTDRs. 
 
 -Dirty optical cables?
+Can prevent light signals from being read or transmitted correctly. The dirty, debris, or other material can be in the core of the cable or on the connectors. Connectors should be cleaned, but not excessively as that can also cause damage. Optical connectors should be covered with their protective caps when not in use. 
 
 COMMON TOOLS
 
@@ -1836,20 +1848,28 @@ NETWORK SOFTWARE TOOLS AND COMMANDS
 SOFTWARE TOOLS
 
 -WiFi analyzer?
+Physical tool or software to assess and optimize wireless network performance. Provides detailed information such signal strength, channel utilization, interference sources, network security, and more. Can also provide SSID, BSSID (MAC address), encryption type, signal quality. 
 
 -Protocol analyzer/packet capture?
+Software or hardware tool used for capturing network packets and analyzing their contents. This tool can sniff traffic as it is passing through the network, or it can use captured/saved packets. Netadmins use this type of tool to troubleshoot network issues, e.g. slow performance, connectivity problems. Network security professionals use it to investigate possible breaches, malware infections, etc. Protocol analyzers support a wide variety of network protocols: Ethernet, IP, TCP/UDP, HTTPS, DNS, DHCP, etc. Capture filter can be used to capture only packets that meet certain criteria, e.g. DNS traffic, or packets with a specific destination IP. 
 
 -Bandwidth speed tester?
+Software or web-based app that measures the speed and performance of an internet connection. Can measure upload speed, download speed, latency, packet loss. 
 
 -Port scanner?
+Software tool or app used to scan for open ports on network devices. Can be used to discover network services, vulnerabilities, and potential entry points into a network. Examples of ports that me discovered during a scan: TCP port 80 (HTTP), TCP port 22 (SSH). Netadmins may use port scanners to ensure network services are up and running, as well as to discover any potential vulnerabilities so that they can take remedial action. Unauthorized port scanning is often illegal. 
 
 -iperf?
+Open-source CLI tool used to measure the performance and throughput of TCP and UDP data streams. Primarily used for performance tests on LANs and WANs; measures throughput, latency, packet loss. Uses server-client architecture where the server listens to the transmissions sent by the client. Can be used in shell scripts as well as other automation tools. 
 
 -NetFlow analyzers?
+Network management and monitoring tool used to collect and analyze NetFlow data exported by network devices. It is a network protocol developed by Cisco that analyzes traffic patterns and produces findings based upon results, e.g. most common destination for network packets, traffic volume, top "talkers". 
 
 -Trivial File Transfer Protocol (TFTP) server?
+Simple file transfer protocol used for transferring files within a network, often used for storing and transmitting configuration files, firmware updates, and boot files for network devices. Operates over UDP port 69, lacks the security features (authentication) of similar protocols such as FTP or SFTP. TFTP clients and servers can use various OSes. TFTP is not suitable for large file transfers or where security features such as authentication or data integrity are required. 
 
 -Terminal emulator?
+
 
 -IP scanner?
 
