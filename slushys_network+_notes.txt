@@ -1685,16 +1685,21 @@ Another incredibly valuable device in physical security, most likely harder to f
 Server cabinets/racks with locks, for added security. Can use a key, combination, keypad, or even a biometric scanner. In addition to protecting networking equipment from theft, locking racks can also have safeguards against dust, debris, electromagnetic interference (EMI), radio-frequency interference (RFI), etc. Some locking racks may have remote monitoring and management capabilities. 
 
 -Locking cabinets?
+See the previous entry.
 
 -Access control vestibule (mantrap)?
+These are physical access control devices, usually the way they work is to allow only one person at a time to enter a restricted area, in order to prevent tailgating and/or piggybacking. Typically has two doors: one connected to the unsecured area, and one leading out to the secured area. A mantrap is a type of ACV that locks its doors when someone enters, the doors only unlock after the person has been authenticated. 
 
 -Smart lockers?
+These are storage units equipped with electronic access control equipment, designed to store IT devices. They are usually connected to inventory software in order to keep track of what is being used and by whom. 
 
 ASSET DISPOSAL
 
 -Factory reset/wipe configuration?
+This means reverting the device to as close as possible to its original state when it was shipped from the factory. Wiping the data involves overwriting existing bits with random 0s and 1s, which makes it difficult but not impossible to recover the data that was there before. 
 
 -Sanitize devices for disposal?
+Process of erasing all configurations and data from a device, in order to prevent unauthorized access. Different sanitization methods may be appropriate depending on the sensitivity of the data on the device. There are many third-party tools that can perform factory resets and/or wipe drives, and some OSes come with built-in tools for performing factory resets. It is important to verify afterward that the drive has actually been wiped, one method you can use to do this is data recovery tests. 
 
 NETWORK TROUBLESHOOTING
 
@@ -1741,28 +1746,40 @@ TROUBLESHOOT COMMON CABLE CONNECTIVITY ISSUES
 SPECIFICATIONS AND LIMITATIONS
 
 -Throughput?
+In contradistinction with bandwidth, which is how much data can *theoretically* travel across a network, throughput is the *actual* amount of data that a network can process at a given point in time. Throughput can be hindered by factors such as capacity of network cables, CPU processing power, read/write speeds of storage devices, available memory, etc. Network congestion can also slow down throughput, as can latency. Network protocols and services can slow it down, QoS prioritization as well. In wireless networks, signal attentuation and/or distance from the WAP can lower throughput. Security measures can slow down a network, e.g. encryption. 
 
 -Speed?
+Many factors can affect transmission speeds, including age and quality of hardware, distance (even in wired connections, signals degrade over long distances), contention ratio (number of users sharing same bandwidth) in cable or DSL, ISP limitations (higher for large businesses than for SOHO), and more.
 
 -Distance?
+In wired and wireless networks, distance can and does affect speed. In wired connections, signals still lose their strength the further they travel. In wireless networks, obviously the wireless signals only go out so far, especially if there are obstructions in the path. Fiber cables can transmit signals over greater distances than copper, but still have their own limitations. Environmental factors---such as interference, noise, humidity, and temperature---can also degrade signals. Devices such as repeaters, extenders, optical amplifiers, and signal boosters can be used to keep the signal alive. 
 
 CABLE CONSIDERATIONS
 
 -Shielded and unshielded?
+STP means shielded twisted pair, FTP means foiled twisted pair. Shielded cables have an additional layer of shielding around the inner conductors, usually made of foil or braided metal; this is to protect it from EMI and RFI. Because of the additional shielding, these cables tend to be more expensive. They can be less flexible and more bulky. 
+
+UTP are more readily available and less expensive. 
 
 -Plenum and riser-rated?
+Designed to reduce the risk of fire spread in a building. A plenum is an area in a building designed for air circulation, and that is exactly where plenum cables go. Plenum cables have special insulation and jacketing such that they do not emit very much smoke and are less toxic than standard cables, in the case that they do catch on fire. 
+
+A riser is a vertical shaft or conduit that connects different floors or levels of a building, allowing cables and pipes to traverse the floors. There is a lower risk of fire and smoke spreading between riser shafts compared to plenum spaces. Riser-rated cables have fire-retardant components, such as the jacket and insulation; they are designed to prevent fires from spreading between floors of the building. 
 
 CABLE APPLICATION
-
 -Rollover cable/console cable?
+The console cable connects to the console or serial port of a networking device, e.g. switch or router. It allows you to access the management interface using a terminal emulator or a GUI. This is an out-of-band management method, which means that even if the standard management lines are down, IT admins can still use console cables to manage network devices. Examples of terminal emulation software: PuTTY, HyperTerminal, Minicom. The transmit pins on this cable connect to the receiver pins on the other end.
 
 -Crossover cable?
+Crossover cables are used to connect two devices of the same type, e.g. a switch and a switch, a laptop and a router. Basically switches are the only device that is going to have a different pin layout, versus computers and routers. One of the most common uses of this cable is to connect two computers directly together. In theory, crossover cables are not needed anymore because devices are able to auto-detect what type of cable is being used and adjust input/output accordingly, but this feature may not always work; ergo, it is recommended to use a crossover cable for purposes of fault tolerance. Crossover cables can also be used to connect to management/serial/console ports on networking equipment in order to access the management interface. 
 
 -Power over Ethernet (PoE)?
+802.3af: simplifies network installations because a single cable can be used for power and data transmission. Common applications include VoIP, WAPs, IP cameras, IoT devices, network switches, and more. 
 
 COMMON ISSUES
 
 -Attenuation?
+Signal loss over distance, or due to obstructions in the case of wireless signals. In wired connections, low-quality media can cause loss/degradation of the signal. EMI and RFI are considerations with wired and wireless signals, hence shielded cables and multiple transmission frequencies. In fiber connections, factors such as light dispersion come into play.
 
 -Interference?
 
