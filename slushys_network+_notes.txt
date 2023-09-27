@@ -1921,7 +1921,7 @@ Displays information about a particular interface on a switch or router. In addi
 Used to display detailed network device configuration information, including interface config, routing configuration, security settings, device settings, QoS policies, VPN/tunneling, DHCP, DNS, and more.
 
 -show route?
-Used to display routing table on network devices. 
+Used to display routing table on network devices. The routing table includes detailed information, such as route type, administrative distance, metric, next hop information, default route, etc. 
 
 TROUBLESHOOT WIRELESS CONNECTIVITY
 
@@ -1934,42 +1934,59 @@ SPECS AND LIMITATIONS
 -Distance?
 
 -Received signal strength indication (RSSI)?
+Measurement of the power level of a received wireless signal, usually expressed in dBm. RSSI is typically represented in negative values, with a value closer to zero being a stronger signal. Example: -50 dBm is a stronger signal than -100 dBm. Unfortunately, RSSI does not provide information about signal quality, for that you can use other metrics such as SNR (signal to noise ratio) or MCS (modulation and coding scheme). 
 
 -Effective isotropic radiated power (EIRP)?
+The total power that a wireless networking system radiates from an antenna, factoring in the output power and antenna's gain. 
 
 CONSIDERATIONS
 
 -Antennas?
+There are different types of antennas, because wireless networks are relatively easy to hack, this is going to be an important factor. You need to decide whether you need an omnidirectional or directional antenna, as well as how much output power you will need to cover your entire site. 
 
 -Placement?
+This is going to be very important to avoid the network getting attacked by wardrivers and such, you need the right placement and type (omnidirectional, directional) to cover your entire site but not so much coverage that there is signal leakage.
 
 -Type?
+Omnidirectional, directional, parabolic, Yagi, patch, helical, whip, dipole, etc.
 
 -Polarization?
+Refers to the orientation of the electric field in an electromagnetic wave produced or received by the antenna. There can be vertical polarization or horizontal polarization. When antennas with different polarization orientations communicate, there can be signal degradation due to polarization mismatch. RHCP is Right-Hand Circular Polarization, where the electric field rotates to the right as the signal propagates; LHCP is the left-hand variant of this. 
 
 -Channel utilization?
+Using RF channels that are too close together can cause signal interference. For the 2.4 GHz frequency band, channels 1, 6, and 11 are recommended as there is little to no interference among them and you can set up 3 channels this way. 
 
 -AP association time?
+The amount of time it takes for a wireless client to establish a connection and be associated with a WAP. The general steps are Scanning, Network Discovery, Authentication, and Association. 
 
 -Site survey?
+Evaluation of a physical site in preparation for installing a network there. It evaluates all aspects of the site that could have any effect on the network.
 
 COMMON ISSUES
 
 -Interference?
+Can be an issue in wired or wireless networks, which is why shielded cables exist. Interference can be RFI or EMI, also from the weather. In wireless networks, signal interference can occur from other devices using the 2.4 GHz frequency, which is many devices. 5 GHz frequency band is used by far fewer devices, but comes with own challenges. 
 
 -Channel overlap?
+A situation where the wireless channels used by two or more neighboring WAPs overlap fully or partially with one another in the RF spectrum. This can cause signal interference for both WAPs. The 5 GHz frequency band offers far more non-overlapping channels than the 2.4 GHz band. You can use a spectrum analysis tool to identify channel overlap and signal interference. 
 
 -Antenna cable attenuation/signal loss?
+Reduction in the strength of a signal as it travels from an antenna down through the cable, e.g. to a WAP or a radio transceiver. 
 
 -RF attentuation/signal loss?
+Wireless signals propagate in all directions as they travel outward from their source. Even if there were no obstacles in the way, eventually the signals would disperse so as to become unreadable, which is why WAPs generally only have a coverage area of around 100 feet. 
 
 -Wrong SSID?
+A situation wherein a client device is attempting to connect to a WAP using the wrong SSID. This would obviously prevent the client device from establishing a connection with the WAP.
 
 -Incorrect passphrase?
+This would prevent a client device from successfully associating itself with a WAP.
 
 -Encryption protocol mismatch?
+Occurs when there is a mismatch between the encryption protocol used by the WAP and the prospective client. Usually this will prevent the client from associating with the WAP altogether, however depending on configuration they may negotiate and decide to use a less secure protocol; this, in turn, can be highly insecure as the traffic can be intercepted and most likely decrypted, e.g. if they decide to use WPA instead of WPA2.
 
 -Insufficient wireless coverage?
+A situation in which a wireless network does not provide enough signal strength and/or coverage to meet the demands of its users. This can engender connectivity problems, slow connection speeds, dropped connections, etc. This can be caused by distance, obstacles, interference, low signal strength, or too many users. 
 
 -Captive portal issues?
 
