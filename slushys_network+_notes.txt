@@ -1989,44 +1989,61 @@ Occurs when there is a mismatch between the encryption protocol used by the WAP 
 A situation in which a wireless network does not provide enough signal strength and/or coverage to meet the demands of its users. This can engender connectivity problems, slow connection speeds, dropped connections, etc. This can be caused by distance, obstacles, interference, low signal strength, or too many users. 
 
 -Captive portal issues?
+Session expiry, incompatible devices, OS behavior, browser cache, JavaScript dependencies, network overload, portal server failures, etc.
 
 -Client disassociation issues?
+Disruptions in the association/connection between a wireless client and its WAP. Can occur because of signal weakness, interference, inefficient roaming, handover failures, authentication failures, encryption mismatches, aggressive power saving, outdated drivers and/or firmware, bugs, channel congestion, AP overload, etc.
 
 TROUBLESHOOT GENERAL NETWORKING ISSUES
 
 CONSIDERATIONS
 
 -Device configuration review?
+Evaluation and analysis of the configuration and settings of network devices. The objective is to assess the device(s) for correctness, security, performance, and compliance. 
 
 -Routing tables?
+Dynamic routing protocols are generally reliable, but there may be cases where the protocol makes mistakes. You can always configure static routes or you can make static entries in a routing table, which will have an administrative distance of 0 by definition. 
 
 -Interface status?
+Can be checked by the link lights or in the management interface. Sometimes interfaces may be administratively down, or just down for some other reason. As always, it is a good idea to start at Layer 1 of the OSI model and work your way up when troubleshooting; we start with Layer 1 because it is generally the least complicated and encompasses all of the layers above it. 
 
 -VLAN assignment?
+General steps: review VLAN configuration, check port configuration, verify VLAN tagging, check VLAN membership, troubleshoot inter-VLAN routing, check for VLAN overlaps, etc. 
 
 -Network performance baselines?
+Involves comparing current network performance to its documented baseline. Baseline metrics can include bandwidth utilization, latency, packet loss, error rates, etc. Collaboration among different IT teams in the organization may be necessary, e.g. server, support, cloud.
 
 COMMON ISSUES
 
 -Collisions?
+Occurs mostly in CSMA/CD networks, before the advent of switches. Cables were shared and so only one device could transmit at a time, otherwise packets would collide into one another.
 
 -Broadcast storm?
+Occurs when too many broadcast packets are going out onto the network. Packets will collide and become undeliverable, causing the network to go down. This can happen by accident or be deliberately provoked by an attacker.
 
 -Duplicate MAC address?
+Can occur by accident or as part of MAC spoofing. No two devices on the planet should share the same MAC address, ergo if two devices on the same network do, it is going to cause issues. Since Layer 2 networking relies on MAC address for packet delivery, this is the OSI layer that is going to be most affected. Potential issues: ARP, network congestion, broadcast storms, security risks, IP address conflicts, network services issues, etc. 
 
 -Duplicate IP address?
+Can occur by accident or as part of IP spoofing. Static IP or dynamic IP can both create duplicates, by human error or by some DHCP bug. Potential issues: IP address conflict, communication errors, DHCP conflicts, security risks, failure of network services, etc. 
 
 -Multicast flooding?
+A situation in which multicast traffic is sent to all hosts on a network segment, regardless of whether they are in the multicast group or not. While this may seem like it is inherently an error, sometimes multicast flooding is used when network hardware does not natively multicast transmissions. In such a case, multicast flooding is used in lieu to get the packets out to all the destination hosts. 
 
--Assymetrical routing?
+-Asymmetrical routing?
+Occurs when the outbound and inbound paths for a network transmission do not follow the same path. This can happen if a network is configured to perform load balancing or to use redundant paths. Other possibilities include provider-based routing (e.g. cloud provider or ISP), as well as policy-based routing (QoS or security policies). Firewall and NAT often use a stateful approach, and if they detect asymmetrical routing, they could drop the packets. Packet reordering is also possible, which occurs when packets arrive out of order and must be reassembled in the correct order, which introduces a lot of overhead. Asymmetrical routing can also introduce security risks, since it makes it harder to detect and attack.
 
 -Switching loops?
+These occur when there is more than one path to the destination in a network, and then these paths create a loop. Can lead to broadcast storms, network congestion, and even complete network failure. Switching loops occur in networks with redundant paths configured, which can help enhance reliability but also introduce loops. STP and RSTP are an excellent measure against switching loops, they are protocols designed specifically for this, with RSTP being the Rapid version of the Spanning Tree Protocol. Configuring VLANs can also prevent network failure due to the segmentation of the network.
 
 -Routing loops?
+This occurs when routers incorrectly learn about multiple paths to a destination and make erroneous decisions about how to choose the best path(s). Possible causes: routing protocol inconsistency among network routers, count-to-infinity problem, incorrect configuration. Prevention methods: link-state routing protocols, route summarization, routing policies, etc.
 
 -Rogue DHCP server?
+This is usually a cyberattack in which a device connects to the network and advertises itself as the DHCP server. It intercepts DHCP broadcasts and replies to them with its own IP addressing information, which can then be used for various purposes, e.g. packet interception, packet sniffing, etc.  Additionally, the DHCP server may assign a fraudulent DNS server, which may in turn use fraudulent DNS records to redirect DNS clients to malicious sites controlled by the same group.
 
 -DHCP scope exhaustion?
+A DHCP scope is a range of IP addresses that can be assigned to DHCP clients. Exhaustion can occur if there are more DHCP clients than there are host IP addresses in the DHCP scope. Other causes include excessive lease times, as well as dynamic and static IP address mixing. 
 
 IP SETTING ISSUES
 
