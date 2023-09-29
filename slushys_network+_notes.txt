@@ -2048,35 +2048,51 @@ A DHCP scope is a range of IP addresses that can be assigned to DHCP clients. Ex
 IP SETTING ISSUES
 
 -Incorrect gateway?
+An incorrect gateway will prevent LAN devices from communicating with other LANs, including the internet. 
 
 -Incorrect subnet mask?
+An incorrect subnet mask will cause the client to appear to be in a different LAN than it actually is, which will in turn prevent it from communicating with any devices outside of its LAN. 
 
 -Incorrect IP address?
+This will prevent the host from receiving or transmitting any traffic from or to outside its LAN.
 
 -Incorrect DNS?
+This will cause the DNS client to incorrectly resolve names to IPs, or vice-versa. Alternatively, it may not be able to resolve the name at all.
 
 -Missing route?
+This will cause the source, presumably a router, to either have to use a different route or not be able to transmit at all. 
 
 -Low optical link budget?
+A situation in which the optical power budget is insufficient for reliable data transmission over a specific optical connection. The optical link budget determines the maximum distance or reach of an optical connection. A low link budget indicates can lead to signal and communication issues. Potential causes: long distance, high fiber loss, multiple connectors and splices, aging components. Consequences of low optical link budget: reduced reach, reduced data rates, increased errors. 
 
 -Certificate issues?
+Digital certificates are used to ensure the authenticity and security of websites. Possible issues: expired certificates, misconfigured certificates, revoked certificate, self-signed certificates, expired CA certificates, etc.
 
 -Hardware failure?
+Common issues: NIC failure, NIC driver problems, switch or router failure, cable or physical connection issues, power outages and hardware reboots, hardware exhaustion, firewall or security device failure, load balancer failure, memory or storage failure, etc.
 
 -Host-based/network-based firewall settings?
+Host-based firewalls allow or filter traffic based partly on source and destination IP. If the IP address on the host isn't configured correctly, or that of the source/destination, that could cause connection issues. 
+
+Network-based firewalls: ACLs, NAT/PAT, stateful inspection, etc. These can all cause issues if not properly configured.
 
 -Blocked services, ports, or addresses?
+Can lead to connectivity and connection issues: blocked services, firewall rules, application layer filtering. Some IP addresses or even address ranges may be blocked for security reasons, e.g. to prevent DDoS attacks from known attacker networks. Geolocation blocking is another possibility, e.g. Russia or China. To avoid erroneously blocking any of the above, you should review firewalls, ACLs, whitelists, etc.
 
 -Incorrect VLAN?
+Possible causes: misconfigured switchports, human error, lack of documentation. Issues: loss of connectivity, IP address conflicts, security risks, subnet mismatch. 
 
 -DNS issues?
+If the correct DNS server isn't assigned (usually as part of DHCP configuration), this can cause the DNS client to not be able to perform recursion for name resolution. Alternatively, if the DNS records aren't correct, or if there is a problem with the DNS server itself, the DNS client(s) may not have the correct IP addresses in the DNS records; additionally, the DNS clients may not be able to perform recursion either.
 
 -NTP issues?
+If network devices have NTP issues (either locally are from the server), it can issues: authentication failure, logging and event correlation, cryptographic protocol failure (e.g. TLS), difficulty performing network diagnostics. How to prevent NTP problems: use reliable NTP sources, implement redundancy, monitor NTP traffic, NTP authentication, update and patch NTP.
 
 -BYOD challenges?
+User devices may not meet the security or hardware requirements for connecting to the organization's network, in which it will not be assigned IP addressing settings from the DHCP server. The hardware on the device may not be functioning properly, e.g. the NIC is damaged or nonfunctional, or the driver for it is outdated, and the user can't connect to the network. 
 
 -Licensed feature issues?
+Refers to a specific software or feature therein that requires a purchase or paid subcription to use. If a user doesn't have a license for, say, ExpressVPN, then they won't be able to install the app and connect to a VPN server in order to mask their IP address. 
 
 -Network performance issues?
-
-
+If the network isn't functioning properly, that could cause many issues; including inability to obtain an IP address, or to be able to reach devices by IP address. Most networks rely on DHCP for their addressing, and DHCP requires a fair number of packets to travel across the network in order for adresses to be requested, offered and accepted. There are not only unicast packets involved in this process, but also broadcast packets. Therefore it follows that the network must be fully functional for this process to be carried out effectively.
